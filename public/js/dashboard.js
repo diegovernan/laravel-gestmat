@@ -9,31 +9,41 @@
     var ctx = document.getElementById('myChart')
     // eslint-disable-next-line no-unused-vars
     var myChart = new Chart(ctx, {
-      type: 'line',
+      type: 'bar',
       data: {
         labels: [
-          'Sunday',
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday'
+          'Janeiro',
+          'Fevereiro',
+          'Março',
+          'Abril',
+          'Maio',
+          'Junho',
+          'Julho',
+          'Agosto',
+          'Setembro',
+          'Outubro',
+          'Novembro',
+          'Dezembro'
         ],
         datasets: [{
           data: [
-            15339,
-            21345,
-            18483,
-            24003,
-            23489,
-            24092,
-            12034
+            10,
+            13,
+            21,
+            18,
+            25,
+            15,
+            17,
+            27,
+            28,
+            20,
+            22,
+            29
           ],
           lineTension: 0,
-          backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          borderWidth: 4,
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1,
           pointBackgroundColor: '#007bff'
         }]
       },

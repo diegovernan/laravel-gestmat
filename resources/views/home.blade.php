@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
+
     <title>{{ config('app.name', 'GestMat') }}</title>
 
     <!-- Bootstrap core CSS -->
@@ -88,7 +89,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <span data-feather="shopping-cart"></span>
+                                <span data-feather="package"></span>
                                 Produtos
                             </a>
                         </li>
@@ -119,6 +120,7 @@
                                 Perfil
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="lock"></span>
@@ -132,6 +134,7 @@
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Dashboard</h1>
+
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
                     </div>
@@ -140,6 +143,7 @@
                 <canvas class="my-4 w-100" id="myChart" width="1000" height="250"></canvas>
 
                 <h2>Produtos cadastrados</h2>
+
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
@@ -151,6 +155,7 @@
                                 <th>Header</th>
                             </tr>
                         </thead>
+                        
                         <tbody>
                             <tr>
                                 <td>1,001</td>

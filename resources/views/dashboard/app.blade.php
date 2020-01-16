@@ -39,7 +39,7 @@
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{ route('home') }}">{{ config('app.name', 'GestMat') }}</a>
 
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Pesquisar produto..." aria-label="Pesquisar">
 
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav px-3">

@@ -31,6 +31,13 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="#">
+                    <span data-feather="archive"></span>
+                    Estoque
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
                     <span data-feather="users"></span>
                     Clientes
                 </a>

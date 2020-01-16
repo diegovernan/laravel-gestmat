@@ -19,10 +19,10 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Pedido</th>
             </tr>
         </thead>
 

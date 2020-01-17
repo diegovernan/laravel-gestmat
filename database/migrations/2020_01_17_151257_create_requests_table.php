@@ -15,7 +15,17 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('supplier_id');
+            $table->unsignedBigInteger('product_id');
+            $table->integer('quantity');
+            $table->date('order_at');
+            $table->boolean('arrived');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('supplier_id')->references('id')->on('suppliers');
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

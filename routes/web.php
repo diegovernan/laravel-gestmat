@@ -1,6 +1,6 @@
 <?php
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::redirect('/', '/home');
 

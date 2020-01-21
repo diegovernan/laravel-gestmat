@@ -1,9 +1,7 @@
 @extends('dashboard.app')
 
 @section('content')
-
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-
+<div class="container py-5">
     @include('alerts.messages')
 
     <form method="post" action="{{ route('profile.update', $user->id) }}">
@@ -14,7 +12,9 @@
             <input type="text" class="form-control" id="Input1" name="name" value="{{ old('name') ?? $user->name }}">
         </div>
 
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
     </form>
 </div>
 

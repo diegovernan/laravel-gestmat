@@ -10,3 +10,4 @@ Route::get('/profile', 'ProfileController@index')->name('users.profile');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
 
 Route::get('/security', 'SecurityController@index')->name('users.security');
+Route::patch('/security/{user}', 'SecurityController@update')->name('security.update');

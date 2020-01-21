@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\ProfileRequest;
 
 class ProfileController extends Controller
 {
@@ -19,7 +20,7 @@ class ProfileController extends Controller
         return view('users.profile', compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(ProfileRequest $request, User $user)
     {
         $user->name = $request->name;
         $user->save();

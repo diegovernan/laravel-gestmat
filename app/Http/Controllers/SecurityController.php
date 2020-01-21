@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\SecurityRequest;
 
 class SecurityController extends Controller
 {
@@ -20,7 +21,7 @@ class SecurityController extends Controller
         return view('users.security', compact('user'));
     }
 
-    public function update(Request $request, User $user)
+    public function update(SecurityRequest $request, User $user)
     {
         if (!(Hash::check($request->old_password, auth()->user()->password))) {
             return redirect()->back()->withErrors('A senha atual está incorreta. Por favor, tente novamente.');

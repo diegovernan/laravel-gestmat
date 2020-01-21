@@ -18,4 +18,12 @@ class ProfileController extends Controller
 
         return view('users.profile', compact('user'));
     }
+
+    public function update(Request $request, User $user)
+    {
+        $user->name = $request->name;
+        $user->save();
+
+        return redirect()->back()->with('success', 'Perfil atualizado!');
+    }
 }

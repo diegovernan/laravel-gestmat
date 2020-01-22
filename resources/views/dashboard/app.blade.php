@@ -63,10 +63,13 @@
         <div class="row">
             @include('dashboard.sidebar')
 
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 border-bottom">
                 @yield('content')
             </main>
         </div>
+        <div class="text-right">
+                <span>Por <a href="http://www.diegovernan.com.br" target="_blank" class="text-primary">Diego Vernan</a></span>
+            </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>

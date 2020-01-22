@@ -23,7 +23,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Route::is('products') ? 'active' : '' }}" href="{{ route('products') }}">
                     <span data-feather="package"></span>
                     Produtos
                 </a>

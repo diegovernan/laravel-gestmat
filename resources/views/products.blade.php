@@ -20,7 +20,7 @@
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-success">Salvar</button>
         </div>
     </form>
 </div>
@@ -29,7 +29,7 @@
 
 <h2 class="text-center py-5">Produtos cadastrados</h2>
 
-<div class="table-responsive">
+<div class="table-responsive pb-5">
     <table class="table table-striped table-sm">
         <thead>
             <tr>

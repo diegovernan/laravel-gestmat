@@ -21,7 +21,7 @@
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-success">Salvar</button>
         </div>
     </form>
 </div>
@@ -35,8 +35,7 @@
     <p>Nome: {{ $product->name }}</p>
     <p>Preço: R${{ $product->price }}</p>
 
-    <a href="{{ route('products') }}" type="button" class="btn btn-dark btn-sm">Voltar</a>
-</div>
+    <a href="{{ route('products') }}" type="button" class="btn btn-dark">Voltar</a>
 </div>
 
 @endsection

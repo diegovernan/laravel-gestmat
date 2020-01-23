@@ -47,7 +47,7 @@
                 <td>{{ $product->name }}</td>
                 <td>R$ {{ $product->price }}</td>
                 <td>
-                    <button type="button" class="btn btn-outline-dark btn-sm"><span data-feather="edit"></span></button>
+                    <a href="{{ route('product.edit', $product->id) }}" type="button" class="btn btn-outline-dark btn-sm"><span data-feather="edit"></span></a>
                     <button type="button" class="btn btn-outline-dark btn-sm"><span data-feather="trash-2"></span></button>
                 </td>
             </tr>

@@ -33,7 +33,13 @@ class ProductController extends Controller
 
     public function update(Request $request, Product $product)
     {
-        //
+        $product->user_id = auth()->user()->id;
+        $product->name = $request->name;
+        $product->price = $request->price;
+
+        $product->save();
+
+        return redirect()->back()->with('success', 'Produto atualizado com sucesso!');
     }
 
     public function destroy(Product $product)

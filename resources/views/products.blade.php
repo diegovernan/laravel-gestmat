@@ -45,7 +45,7 @@
             <tr>
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
-                <td>{{ $product->price }}</td>
+                <td>R$ {{ $product->price }}</td>
                 <td>
                     <button type="button" class="btn btn-outline-dark btn-sm"><span data-feather="edit"></span></button>
                     <button type="button" class="btn btn-outline-dark btn-sm"><span data-feather="trash-2"></span></button>
@@ -58,6 +58,12 @@
             @endforelse
         </tbody>
     </table>
+
+    <div class="d-flex">
+        <div class="mx-auto py-2">
+            {{ $products->links() }}
+        </div>
+    </div>
 </div>
 
 @endsection

@@ -3,6 +3,8 @@
 @section('content')
 
 <div class="container py-5">
+    <h2 class="text-center">Atualizar senha</h2>
+
     @include('alerts.messages')
 
     <form method="post" action="{{ route('security.update', $user->id) }}">

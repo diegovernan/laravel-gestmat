@@ -1,7 +1,10 @@
 @extends('dashboard.app')
 
 @section('content')
+
 <div class="container py-5">
+    <h2 class="text-center">Atualizar perfil</h2>
+
     @include('alerts.messages')
 
     <form method="post" action="{{ route('profile.update', $user->id) }}">

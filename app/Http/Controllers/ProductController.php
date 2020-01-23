@@ -9,7 +9,9 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('products');
+        $products = Product::where('user_id', auth()->user()->id)->latest()->get();
+
+        return view('products', compact('products'));
     }
 
     public function store(Request $request)

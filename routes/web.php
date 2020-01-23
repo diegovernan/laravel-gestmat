@@ -10,6 +10,7 @@ Route::get('/products', 'ProductController@index')->name('products');
 Route::post('/products', 'ProductController@store')->name('products.store');
 Route::get('/product/{product}/edit', 'ProductController@edit')->name('product.edit');
 Route::patch('/product/{product}', 'ProductController@update')->name('product.update');
+Route::delete('/product/{product}', 'ProductController@destroy')->name('product.destroy');
 
 Route::get('/profile', 'ProfileController@index')->name('users.profile');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');

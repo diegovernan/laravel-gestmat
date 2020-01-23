@@ -47,8 +47,15 @@
                 <td>{{ $product->name }}</td>
                 <td>R$ {{ $product->price }}</td>
                 <td>
-                    <a href="{{ route('product.edit', $product->id) }}" type="button" class="btn btn-outline-dark btn-sm"><span data-feather="edit"></span></a>
-                    <button type="button" class="btn btn-outline-dark btn-sm"><span data-feather="trash-2"></span></button>
+                    <div class="d-flex">
+                        <a href="{{ route('product.edit', $product->id) }}" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>
+
+                        <form method="post" action="{{ route('product.destroy', $product->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-outline-dark btn-sm" onclick="return confirm('Tem certeza que deseja excluir este produto?')"><span data-feather="trash-2"></span></button>
+                        </form>
+                    </div>
                 </td>
             </tr>
             @empty

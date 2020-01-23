@@ -30,9 +30,13 @@
 
 <h2 class="text-center py-5">Informações do produto</h2>
 
-<p>ID: {{ $product->id }}</p>
-<p>Nome: {{ $product->name }}</p>
-<p>Preço: R${{ $product->price }}</p>
+<div class="pb-5">
+    <p>ID: {{ $product->id }}</p>
+    <p>Nome: {{ $product->name }}</p>
+    <p>Preço: R${{ $product->price }}</p>
+
+    <a href="{{ route('products') }}" type="button" class="btn btn-dark btn-sm">Voltar</a>
+</div>
 </div>
 
 @endsection

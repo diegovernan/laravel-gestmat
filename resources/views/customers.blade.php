@@ -55,7 +55,7 @@
                 <td>{{ $customer->email }}</td>
                 <td>
                     <div class="d-flex">
-                        <a href="" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>
+                        <a href="{{ route('customer.edit', $customer->id) }}" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>
 
                         <form method="post" action="">
                             @csrf

@@ -17,6 +17,7 @@ Route::post('/inventory', 'InventoryController@store')->name('inventory.store');
 
 Route::get('/customers', 'CustomerController@index')->name('customers');
 Route::post('/customers', 'CustomerController@store')->name('customers.store');
+Route::get('/customer/{customer}/edit', 'CustomerController@edit')->name('customer.edit');
 
 // Route::get('/customers', function () {
 //     return view('customers');

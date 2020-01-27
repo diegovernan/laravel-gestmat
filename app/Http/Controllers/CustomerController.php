@@ -29,7 +29,7 @@ class CustomerController extends Controller
 
     public function edit(Customer $customer)
     {
-        //
+        return view('customer-edit', compact('customer'));
     }
 
     public function update(Request $request, Customer $customer)

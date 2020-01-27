@@ -10,7 +10,7 @@ class InventoryController extends Controller
 {
     public function index()
     {
-        $inventories = Inventory::where('user_id', auth()->user()->id)->latest()->get();
+        $inventories = Inventory::where('user_id', auth()->user()->id)->latest()->paginate(10);
 
         $products = Product::where('user_id', auth()->user()->id)->latest()->get();
 

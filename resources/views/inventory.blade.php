@@ -53,10 +53,10 @@
         <tbody>
             @forelse ($inventories as $inventory)
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{ $inventory->id }}</td>
+                <td>{{ $product->name }}</td>
+                <td>{{ $inventory->quantity }}</td>
+                <td>{{ $inventory->minimum_quantity }}</td>
             </tr>
             @empty
             <tr>
@@ -65,6 +65,12 @@
             @endforelse
         </tbody>
     </table>
+
+    <div class="d-flex">
+        <div class="mx-auto py-2">
+            {{ $inventories->links() }}
+        </div>
+    </div>
 </div>
 
 @endsection

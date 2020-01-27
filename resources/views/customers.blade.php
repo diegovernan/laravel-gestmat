@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container py-5">
-    <h2 class="text-center">Cadastrar produto</h2>
+    <h2 class="text-center">Cadastrar cliente</h2>
 
     @include('alerts.messages')
 
@@ -69,7 +69,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="4" class="text-center">Nenhum cliente encontrado...</td>
+                <td colspan="5" class="text-center">Nenhum cliente encontrado...</td>
             </tr>
             @endforelse
         </tbody>

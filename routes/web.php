@@ -15,9 +15,11 @@ Route::delete('/product/{product}', 'ProductController@destroy')->name('product.
 Route::get('/inventory', 'InventoryController@index')->name('inventory');
 Route::post('/inventory', 'InventoryController@store')->name('inventory.store');
 
-Route::get('/customers', function () {
-    return view('customers');
-})->name('customers');
+Route::get('/customers', 'CustomerController@index')->name('customers');
+
+// Route::get('/customers', function () {
+//     return view('customers');
+// })->name('customers');
 
 Route::get('/profile', 'ProfileController@index')->name('users.profile');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');

@@ -7,7 +7,7 @@
 
     @include('alerts.messages')
 
-    <form method="post">
+    <form method="post" action="{{ route('inventory.store') }}">
         @csrf
         <div class="form-group">
             <label for="inputProd">Produto</label>

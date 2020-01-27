@@ -17,14 +17,17 @@ class InventoryController extends Controller
         return view('inventory', compact('inventories', 'products'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
-        //
+        $inventory = new Inventory();
+        $inventory->user_id = auth()->user()->id;
+        $inventory->product_id = $request->product_id;
+        $inventory->quantity = $request->quantity;
+        $inventory->minimum_quantity = $request->minimum_quantity;
+
+        $inventory->save();
+
+        return redirect()->back()->with('success', 'Transação adicionada!');
     }
 
     public function show(Inventory $inventory)

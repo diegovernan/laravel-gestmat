@@ -13,6 +13,7 @@ Route::patch('/product/{product}', 'ProductController@update')->name('product.up
 Route::delete('/product/{product}', 'ProductController@destroy')->name('product.destroy');
 
 Route::get('/inventory', 'InventoryController@index')->name('inventory');
+Route::post('/inventory', 'InventoryController@store')->name('inventory.store');
 
 // Route::get('/inventory', function () {
 //     return view('inventory');

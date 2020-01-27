@@ -37,7 +37,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Route::is('customers') ? 'active' : '' }}" href="{{ route('customers') }}">
                     <span data-feather="users"></span>
                     Clientes
                 </a>

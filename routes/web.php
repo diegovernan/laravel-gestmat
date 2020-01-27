@@ -12,9 +12,11 @@ Route::get('/product/{product}/edit', 'ProductController@edit')->name('product.e
 Route::patch('/product/{product}', 'ProductController@update')->name('product.update');
 Route::delete('/product/{product}', 'ProductController@destroy')->name('product.destroy');
 
-Route::get('/inventory', function () {
-    return view('inventory');
-})->name('inventory');
+Route::get('/inventory', 'InventoryController@index')->name('inventory');
+
+// Route::get('/inventory', function () {
+//     return view('inventory');
+// })->name('inventory');
 
 Route::get('/profile', 'ProfileController@index')->name('users.profile');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');

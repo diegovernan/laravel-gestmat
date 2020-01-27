@@ -23,7 +23,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect()->back()->with('success', 'Produto adicionado com sucesso!');
+        return redirect()->back()->with('success', 'Produto cadastrado com sucesso!');
     }
 
     public function edit(Product $product)

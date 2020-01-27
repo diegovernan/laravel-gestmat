@@ -27,7 +27,7 @@ class InventoryController extends Controller
 
         $inventory->save();
 
-        return redirect()->back()->with('success', 'Transação adicionada!');
+        return redirect()->back()->with('success', 'Produto adicionado ao estoque com sucesso!');
     }
 
     public function show(Inventory $inventory)

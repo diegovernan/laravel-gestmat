@@ -16,7 +16,15 @@ class CustomerController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $customer = new Customer();
+        $customer->user_id = auth()->user()->id;
+        $customer->name = $request->name;
+        $customer->phone = $request->phone;
+        $customer->email = $request->email;
+
+        $customer->save();
+
+        return redirect()->back()->with('success', 'Cliente cadastrado com sucesso!');
     }
 
     public function edit(Customer $customer)

@@ -54,7 +54,6 @@
                 <td>{{ $customer->phone }}</td>
                 <td>{{ $customer->email }}</td>
                 <td>
-                <td>
                     <div class="d-flex">
                         <a href="" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>
 
@@ -64,7 +63,6 @@
                             <button type="submit" class="btn btn-outline-dark btn-sm" onclick="return confirm('Tem certeza que deseja excluir este cliente?')"><span data-feather="trash-2"></span></button>
                         </form>
                     </div>
-                </td>
                 </td>
             </tr>
             @empty

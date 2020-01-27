@@ -34,7 +34,14 @@ class CustomerController extends Controller
 
     public function update(Request $request, Customer $customer)
     {
-        //
+        $customer->user_id = auth()->user()->id;
+        $customer->name = $request->name;
+        $customer->phone = $request->phone;
+        $customer->email = $request->email;
+
+        $customer->save();
+
+        return redirect()->back()->with('success', 'Cliente atualizado com sucesso!');
     }
 
     public function destroy(Customer $customer)

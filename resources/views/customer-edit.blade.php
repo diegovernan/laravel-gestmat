@@ -7,7 +7,7 @@
 
     @include('alerts.messages')
 
-    <form method="post" action="">
+    <form method="post" action="{{ route('customer.update', $customer->id) }}">
         @csrf
         @method('PATCH')
         <div class="form-group">
@@ -33,7 +33,7 @@
 
 <hr>
 
-<h2 class="text-center py-5">Informações do produto</h2>
+<h2 class="text-center py-5">Informações do cliente</h2>
 
 <div class="pb-5">
     <p>ID: {{ $customer->id }}</p>

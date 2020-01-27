@@ -20,8 +20,8 @@
         </div>
 
         <div class="form-group">
-            <label for="Input1">Quantidade</label>
-            <input type="number" class="form-control" id="Input1" name="quantity" value="">
+            <label for="Input1">Quantidade disponível</label>
+            <input type="number" class="form-control" id="Input1" name="available_quantity" value="">
         </div>
 
         <div class="form-group">
@@ -45,8 +45,8 @@
             <tr>
                 <th>#</th>
                 <th>Produto</th>
-                <th>Quantidade</th>
                 <th>Quantidade mínima</th>
+                <th>Quantidade disponível</th>
             </tr>
         </thead>
 
@@ -55,8 +55,8 @@
             <tr>
                 <td>{{ $inventory->id }}</td>
                 <td>{{ $product->name }}</td>
-                <td>{{ $inventory->quantity }}</td>
                 <td>{{ $inventory->minimum_quantity }}</td>
+                <td class="{{ $inventory->available_quantity > $inventory->minimum_quantity ? 'text-success' : 'text-danger' }}">{{ $inventory->available_quantity }}</td>
             </tr>
             @empty
             <tr>

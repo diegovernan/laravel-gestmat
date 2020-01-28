@@ -12,9 +12,11 @@
 
 <canvas class="my-4 w-100" id="myChart" width="1000" height="250"></canvas>
 
-<h2>Produtos disponíveis</h2>
+<hr>
 
-<div class="table-responsive">
+<h2 class="text-center py-5">Produtos disponíveis</h2>
+
+<div class="table-responsive pb-5">
     <table class="table table-striped table-sm">
         <thead>
             <tr>
@@ -42,6 +44,12 @@
             @endforelse
         </tbody>
     </table>
+
+    <div class="d-flex">
+        <div class="mx-auto py-2">
+            {{ $inventories->links() }}
+        </div>
+    </div>
 </div>
 
 @endsection

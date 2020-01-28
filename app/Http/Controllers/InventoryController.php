@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+
     public function index()
     {
         $inventories = Inventory::where('user_id', auth()->user()->id)->latest()->paginate(10);

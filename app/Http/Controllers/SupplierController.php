@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class SupplierController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+    
     public function index()
     {
         $suppliers = Supplier::where('user_id', auth()->user()->id)->latest()->paginate(10);

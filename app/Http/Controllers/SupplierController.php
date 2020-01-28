@@ -34,7 +34,14 @@ class SupplierController extends Controller
 
     public function update(Request $request, Supplier $supplier)
     {
-        //
+        $supplier->user_id = auth()->user()->id;
+        $supplier->name = $request->name;
+        $supplier->phone = $request->phone;
+        $supplier->email = $request->email;
+
+        $supplier->save();
+
+        return redirect()->back()->with('success', 'Fornecedor atualizado com sucesso!');
     }
 
     public function destroy(Supplier $supplier)

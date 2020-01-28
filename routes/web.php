@@ -9,6 +9,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/suppliers', 'SupplierController@index')->name('suppliers');
 Route::post('/suppliers', 'SupplierController@store')->name('suppliers.store');
 Route::get('/supplier/{supplier}/edit', 'SupplierController@edit')->name('supplier.edit');
+Route::patch('/supplier/{supplier}', 'SupplierController@update')->name('supplier.update');
 
 Route::get('/products', 'ProductController@index')->name('products');
 Route::post('/products', 'ProductController@store')->name('products.store');

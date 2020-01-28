@@ -46,6 +46,8 @@ class CustomerController extends Controller
 
     public function destroy(Customer $customer)
     {
-        //
+        $customer->delete();
+
+        return redirect()->back()->with('success', 'Cliente excluído com sucesso!');
     }
 }

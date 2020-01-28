@@ -19,6 +19,7 @@ Route::get('/customers', 'CustomerController@index')->name('customers');
 Route::post('/customers', 'CustomerController@store')->name('customers.store');
 Route::get('/customer/{customer}/edit', 'CustomerController@edit')->name('customer.edit');
 Route::patch('/customer/{customer}', 'CustomerController@update')->name('customer.update');
+Route::delete('/customer/{customer}', 'CustomerController@destroy')->name('customer.destroy');
 
 // Route::get('/customers', function () {
 //     return view('customers');

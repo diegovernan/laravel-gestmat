@@ -29,7 +29,7 @@ class SupplierController extends Controller
 
     public function edit(Supplier $supplier)
     {
-        //
+        return view('supplier-edit', compact('supplier'));
     }
 
     public function update(Request $request, Supplier $supplier)

@@ -16,7 +16,15 @@ class SupplierController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $supplier = new Supplier();
+        $supplier->user_id = auth()->user()->id;
+        $supplier->name = $request->name;
+        $supplier->phone = $request->phone;
+        $supplier->email = $request->email;
+
+        $supplier->save();
+
+        return redirect()->back()->with('success', 'Fornecedor cadastrado com sucesso!');
     }
 
     public function edit(Supplier $supplier)

@@ -7,7 +7,7 @@
 
     @include('alerts.messages')
 
-    <form method="post" action="{{ route('products.store') }}">
+    <form method="post" action="">
         @csrf
         <div class="form-group">
             <label for="Input1">Nome</label>

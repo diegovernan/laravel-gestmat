@@ -7,6 +7,7 @@ Route::redirect('/', '/home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/suppliers', 'SupplierController@index')->name('suppliers');
+Route::post('/suppliers', 'SupplierController@store')->name('suppliers.store');
 
 Route::get('/products', 'ProductController@index')->name('products');
 Route::post('/products', 'ProductController@store')->name('products.store');

@@ -57,7 +57,7 @@
                     <div class="d-flex">
                         <a href="{{ route('supplier.edit', $supplier->id) }}" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>
 
-                        <form method="post" action="">
+                        <form method="post" action="{{ route('supplier.destroy', $supplier->id) }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-dark btn-sm" onclick="return confirm('Tem certeza que deseja excluir este fornecedor?')"><span data-feather="trash-2"></span></button>

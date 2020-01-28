@@ -6,6 +6,8 @@ Route::redirect('/', '/home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/suppliers', 'SupplierController@index')->name('suppliers');
+
 Route::get('/products', 'ProductController@index')->name('products');
 Route::post('/products', 'ProductController@store')->name('products.store');
 Route::get('/product/{product}/edit', 'ProductController@edit')->name('product.edit');
@@ -20,10 +22,6 @@ Route::post('/customers', 'CustomerController@store')->name('customers.store');
 Route::get('/customer/{customer}/edit', 'CustomerController@edit')->name('customer.edit');
 Route::patch('/customer/{customer}', 'CustomerController@update')->name('customer.update');
 Route::delete('/customer/{customer}', 'CustomerController@destroy')->name('customer.destroy');
-
-// Route::get('/customers', function () {
-//     return view('customers');
-// })->name('customers');
 
 Route::get('/profile', 'ProfileController@index')->name('users.profile');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');

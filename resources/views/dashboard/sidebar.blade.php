@@ -16,7 +16,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Route::is('suppliers') ? 'active' : '' }}" href="{{ route('suppliers') }}">
                     <span data-feather="truck"></span>
                     Fornecedores
                 </a>

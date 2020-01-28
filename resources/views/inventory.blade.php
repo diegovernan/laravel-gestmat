@@ -54,7 +54,7 @@
             @forelse ($inventories as $inventory)
             <tr>
                 <td>{{ $inventory->id }}</td>
-                <td>{{ $product->name }}</td>
+                <td>{{ $inventory->product->name }}</td>
                 <td>{{ $inventory->minimum_quantity }}</td>
                 <td class="{{ $inventory->available_quantity > $inventory->minimum_quantity ? 'text-success' : 'text-danger' }}">{{ $inventory->available_quantity }}</td>
             </tr>

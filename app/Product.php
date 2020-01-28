@@ -13,11 +13,6 @@ class Product extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function inventory()
-    {
-        return $this->belongsTo(Inventory::class);
-    }
-
     public function requests()
     {
         return $this->hasMany(Request::class);

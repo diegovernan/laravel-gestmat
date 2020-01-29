@@ -10,8 +10,8 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <span data-feather="shopping-cart"></span>
-                    Vendas
+                    <span data-feather="send"></span>
+                    Pedidos
                 </a>
             </li>
 
@@ -40,6 +40,13 @@
                 <a class="nav-link {{ Route::is('customers') ? 'active' : '' }}" href="{{ route('customers') }}">
                     <span data-feather="users"></span>
                     Clientes
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span data-feather="shopping-cart"></span>
+                    Vendas
                 </a>
             </li>
 

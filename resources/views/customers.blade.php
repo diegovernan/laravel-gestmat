@@ -20,8 +20,8 @@
         </div>
 
         <div class="form-group">
-            <label for="Input2">E-mail</label>
-            <input type="email" class="form-control" id="Input2" name="email" value="">
+            <label for="Input3">E-mail</label>
+            <input type="email" class="form-control" id="Input3" name="email" value="">
         </div>
 
         <div class="text-center">

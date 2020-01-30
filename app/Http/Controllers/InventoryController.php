@@ -35,14 +35,11 @@ class InventoryController extends Controller
         return redirect()->back()->with('success', 'Produto adicionado ao estoque com sucesso!');
     }
 
-    public function show(Inventory $inventory)
-    {
-        //
-    }
-
     public function edit(Inventory $inventory)
     {
-        //
+        $products = Product::where('user_id', auth()->user()->id)->latest()->get();
+
+        return view('register.inventory-edit', compact('inventory', 'products'));
     }
 
     public function update(Request $request, Inventory $inventory)

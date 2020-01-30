@@ -20,6 +20,7 @@ Route::delete('/product/{product}', 'ProductController@destroy')->name('product.
 
 Route::get('/inventory', 'InventoryController@index')->name('inventory');
 Route::post('/inventory', 'InventoryController@store')->name('inventory.store');
+Route::get('/inventory/{inventory}/edit', 'InventoryController@edit')->name('inventory.edit');
 
 Route::get('/customers', 'CustomerController@index')->name('customers');
 Route::post('/customers', 'CustomerController@store')->name('customers.store');

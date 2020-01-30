@@ -7,7 +7,7 @@
 
     @include('alerts.messages')
 
-    <form method="post" action="">
+    <form method="post" action="{{ route('inventory.update', $inventory->id) }}">
         @csrf
         @method('PATCH')
         <div class="form-group">

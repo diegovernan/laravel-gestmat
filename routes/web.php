@@ -4,8 +4,10 @@ Auth::routes(['verify' => true]);
 
 Route::redirect('/', '/home');
 
+// Principal
 Route::get('/home', 'HomeController@index')->name('home');
 
+// Cadastro
 Route::get('/suppliers', 'SupplierController@index')->name('suppliers');
 Route::post('/suppliers', 'SupplierController@store')->name('suppliers.store');
 Route::get('/supplier/{supplier}/edit', 'SupplierController@edit')->name('supplier.edit');
@@ -30,6 +32,7 @@ Route::get('/customer/{customer}/edit', 'CustomerController@edit')->name('custom
 Route::patch('/customer/{customer}', 'CustomerController@update')->name('customer.update');
 Route::delete('/customer/{customer}', 'CustomerController@destroy')->name('customer.destroy');
 
+// Usuário
 Route::get('/profile', 'ProfileController@index')->name('users.profile');
 Route::patch('/profile/{user}', 'ProfileController@update')->name('profile.update');
 

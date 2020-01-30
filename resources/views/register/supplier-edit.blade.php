@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container py-5">
-    <h2 class="text-center">Atualizar cliente</h2>
+    <h2 class="text-center">Atualizar fornecedor</h2>
 
     @include('alerts.messages')
 
@@ -33,7 +33,7 @@
 
 <hr>
 
-<h2 class="text-center py-5">Informações do cliente</h2>
+<h2 class="text-center py-5">Informações do fornecedor</h2>
 
 <div class="pb-5">
     <p>ID: {{ $supplier->id }}</p>

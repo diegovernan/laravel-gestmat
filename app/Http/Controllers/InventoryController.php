@@ -51,7 +51,7 @@ class InventoryController extends Controller
 
         $inventory->save();
 
-        return redirect()->back()->with('success', 'Estoque com sucesso!');
+        return redirect()->back()->with('success', 'Estoque atualizado com sucesso!');
     }
 
     public function destroy(Inventory $inventory)

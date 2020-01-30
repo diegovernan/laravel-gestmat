@@ -1,5 +1,9 @@
 <nav class="col-md-2 d-none d-md-block bg-light sidebar">
     <div class="sidebar-sticky">
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Principal</span>
+        </h6>
+
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link {{ Route::is('home') ? 'active' : '' }}" href="{{ route('home') }}">
@@ -15,6 +19,26 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span data-feather="shopping-cart"></span>
+                    Vendas
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <span data-feather="bar-chart-2"></span>
+                    Relatórios
+                </a>
+            </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span>Cadastro</span>
+        </h6>
+
+        <ul class="nav flex-column mb-2">
             <li class="nav-item">
                 <a class="nav-link {{ Route::is('suppliers') ? 'active' : '' }}" href="{{ route('suppliers') }}">
                     <span data-feather="truck"></span>
@@ -40,20 +64,6 @@
                 <a class="nav-link {{ Route::is('customers') ? 'active' : '' }}" href="{{ route('customers') }}">
                     <span data-feather="users"></span>
                     Clientes
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="shopping-cart"></span>
-                    Vendas
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span data-feather="bar-chart-2"></span>
-                    Relatórios
                 </a>
             </li>
         </ul>

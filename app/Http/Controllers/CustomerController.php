@@ -16,7 +16,7 @@ class CustomerController extends Controller
     {
         $customers = Customer::where('user_id', auth()->user()->id)->latest()->paginate(10);
 
-        return view('customers', compact('customers'));
+        return view('register.customers', compact('customers'));
     }
 
     public function store(Request $request)
@@ -34,7 +34,7 @@ class CustomerController extends Controller
 
     public function edit(Customer $customer)
     {
-        return view('customer-edit', compact('customer'));
+        return view('register.customer-edit', compact('customer'));
     }
 
     public function update(Request $request, Customer $customer)

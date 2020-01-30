@@ -20,6 +20,6 @@ class HomeController extends Controller
 
         $inventories = Inventory::where('user_id', auth()->user()->id)->latest()->paginate(5);
 
-        return view('home', compact('user', 'inventories'));
+        return view('main.home', compact('user', 'inventories'));
     }
 }

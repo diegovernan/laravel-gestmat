@@ -16,7 +16,7 @@ class SupplierController extends Controller
     {
         $suppliers = Supplier::where('user_id', auth()->user()->id)->latest()->paginate(10);
 
-        return view('suppliers', compact('suppliers'));
+        return view('register.suppliers', compact('suppliers'));
     }
 
     public function store(Request $request)
@@ -34,7 +34,7 @@ class SupplierController extends Controller
 
     public function edit(Supplier $supplier)
     {
-        return view('supplier-edit', compact('supplier'));
+        return view('register.supplier-edit', compact('supplier'));
     }
 
     public function update(Request $request, Supplier $supplier)

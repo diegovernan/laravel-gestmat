@@ -19,7 +19,7 @@ class InventoryController extends Controller
 
         $products = Product::where('user_id', auth()->user()->id)->latest()->get();
 
-        return view('inventory', compact('inventories', 'products'));
+        return view('register.inventory', compact('inventories', 'products'));
     }
 
     public function store(Request $request)

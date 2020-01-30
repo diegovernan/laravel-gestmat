@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         $products = Product::where('user_id', auth()->user()->id)->latest()->paginate(10);
 
-        return view('products', compact('products'));
+        return view('register.products', compact('products'));
     }
 
     public function store(Request $request)
@@ -33,7 +33,7 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
-        return view('product-edit', compact('product'));
+        return view('register.product-edit', compact('product'));
     }
 
     public function update(Request $request, Product $product)

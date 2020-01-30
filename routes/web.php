@@ -22,6 +22,7 @@ Route::get('/inventory', 'InventoryController@index')->name('inventory');
 Route::post('/inventory', 'InventoryController@store')->name('inventory.store');
 Route::get('/inventory/{inventory}/edit', 'InventoryController@edit')->name('inventory.edit');
 Route::patch('/inventory/{inventory}', 'InventoryController@update')->name('inventory.update');
+Route::delete('/inventory/{inventory}', 'InventoryController@destroy')->name('inventory.destroy');
 
 Route::get('/customers', 'CustomerController@index')->name('customers');
 Route::post('/customers', 'CustomerController@store')->name('customers.store');

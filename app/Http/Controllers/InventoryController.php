@@ -56,6 +56,8 @@ class InventoryController extends Controller
 
     public function destroy(Inventory $inventory)
     {
-        //
+        $inventory->delete();
+
+        return redirect()->back()->with('success', 'Item excluído do estoque com sucesso!');
     }
 }

@@ -62,7 +62,7 @@
                     <div class="d-flex">
                         <a href="{{ route('inventory.edit', $inventory->id) }}" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>
 
-                        <form method="post" action="">
+                        <form method="post" action="{{ route('inventory.destroy', $inventory->id) }}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-dark btn-sm" onclick="return confirm('Tem certeza que deseja excluir este item?')"><span data-feather="trash-2"></span></button>

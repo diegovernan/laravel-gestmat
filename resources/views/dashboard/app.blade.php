@@ -40,16 +40,15 @@
         <!-- Right Side Of Navbar -->
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <div>
-                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                        Sair
-                    </a>
+                    <span data-feather="power"></span>
+                    Sair
+                </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </li>
         </ul>
     </nav>

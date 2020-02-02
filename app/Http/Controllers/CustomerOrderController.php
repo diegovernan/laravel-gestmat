@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Order;
+use App\CustomerOrder;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class CustomerOrderController extends Controller
 {
     public function __construct()
     {
@@ -49,7 +49,7 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show(CustomerOrder $customerorder)
     {
         //
     }
@@ -60,7 +60,7 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Order $order)
+    public function edit(CustomerOrder $customerorder)
     {
         //
     }
@@ -72,7 +72,7 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $request, CustomerOrder $customerorder)
     {
         //
     }
@@ -83,7 +83,7 @@ class OrderController extends Controller
      * @param  \App\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy(CustomerOrder $customerorder)
     {
         //
     }

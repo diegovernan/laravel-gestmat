@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\SupplierOrder;
 use Illuminate\Http\Request;
 
-class RequestController extends Controller
+class SupplierOrderController extends Controller
 {
     public function __construct()
     {
@@ -49,7 +49,7 @@ class RequestController extends Controller
      * @param  \App\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(SupplierOrder $supplierorder)
     {
         //
     }
@@ -60,7 +60,7 @@ class RequestController extends Controller
      * @param  \App\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit(SupplierOrder $supplierorder)
     {
         //
     }
@@ -83,7 +83,7 @@ class RequestController extends Controller
      * @param  \App\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(SupplierOrder $supplierorder)
     {
         //
     }

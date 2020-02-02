@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Request;
+use App\SupplierOrder;
 use Illuminate\Http\Request;
 
 class RequestController extends Controller
@@ -72,7 +72,7 @@ class RequestController extends Controller
      * @param  \App\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Request $request)
+    public function update(Request $request, SupplierOrder $supplierorder)
     {
         //
     }

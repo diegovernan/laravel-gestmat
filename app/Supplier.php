@@ -14,8 +14,8 @@ class Supplier extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function requests()
+    public function supplierorders()
     {
-        return $this->hasMany(Request::class);
+        return $this->hasMany(SupplierOrder::class);
     }
 }

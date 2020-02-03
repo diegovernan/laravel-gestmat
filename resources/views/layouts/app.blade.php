@@ -69,7 +69,7 @@
     <div class="container-fluid">
         @auth
         <div class="row">
-            @include('dashboard.sidebar')
+            @include('layouts.sidebar')
 
             <main class="col-md-9 ml-sm-auto col-lg-10 px-4 border-bottom">
                 @yield('content')

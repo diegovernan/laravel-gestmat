@@ -69,7 +69,7 @@
 
     <div class="container-fluid">
         @auth
-        <div class="row">
+        <div class="row pt-5">
             @include('layouts.sidebar')
 
             <main class="col-md-9 ml-sm-auto col-lg-10 px-4 border-bottom">
@@ -81,9 +81,11 @@
             <span>Por <a href="http://www.diegovernan.com.br" target="_blank" class="text-primary">Diego Vernan</a></span>
         </div>
         @else
-        <main class="px-4">
-            @yield('content')
-        </main>
+        <div class="pt-5">
+            <main class="pt-5">
+                @yield('content')
+            </main>
+        </div>
         @endauth
     </div>
 

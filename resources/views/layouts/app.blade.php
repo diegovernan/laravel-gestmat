@@ -51,17 +51,18 @@
                 @endif
             </div>
             @else
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+            <div class="d-flex mx-2">
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                    <span data-feather="power"></span>
-                    Sair
-                </a>
+                        Sair
+                    </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
+            </div>
             @endguest
         </ul>
     </nav>

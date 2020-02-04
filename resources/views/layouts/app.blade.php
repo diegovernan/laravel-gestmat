@@ -91,7 +91,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script src="{{ asset('js/dashboard.js') }}"></script>
+    <script>
+        feather.replace()
+    </script>
+    @yield('scripts')
 </body>
 
 </html>

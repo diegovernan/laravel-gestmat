@@ -6,7 +6,8 @@ Route::redirect('/', '/home');
 
 // Principal
 Route::get('/home', 'HomeController@index')->name('home');
-Route::view('/supplierorders', 'main.supplierorders')->name('supplierorders');
+
+Route::get('/supplierorders', 'SupplierOrderController@index')->name('supplierorders');
 
 // Cadastro
 Route::get('/suppliers', 'SupplierController@index')->name('suppliers');

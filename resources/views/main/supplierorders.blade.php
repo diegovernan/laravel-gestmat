@@ -10,21 +10,21 @@
     <form method="post" action="">
         @csrf
         <div class="form-group">
-            <label for="inputProd">Fornecedor</label>
-            <select id="inputProd" class="form-control" name="product_id">
-                <option value="none" selected disabled hidden>Selecionar...</option>
-                @foreach ($suppliers as $supplier)
-                <option value="{{ $supplier->id }}" {{ old('supplier_id') == $supplier->id ? 'selected' : '' }}>{{ $supplier->name }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="form-group">
             <label for="inputProd">Produto</label>
             <select id="inputProd" class="form-control" name="product_id">
                 <option value="none" selected disabled hidden>Selecionar...</option>
                 @foreach ($products as $product)
                 <option value="{{ $product->id }}" {{ old('product_id') == $product->id ? 'selected' : '' }}>{{ $product->name }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="inputProd">Fornecedor</label>
+            <select id="inputProd" class="form-control" name="product_id">
+                <option value="none" selected disabled hidden>Selecionar...</option>
+                @foreach ($suppliers as $supplier)
+                <option value="{{ $supplier->id }}" {{ old('supplier_id') == $supplier->id ? 'selected' : '' }}>{{ $supplier->name }}</option>
                 @endforeach
             </select>
         </div>

@@ -20,8 +20,8 @@
         </div>
 
         <div class="form-group">
-            <label for="inputProd">Fornecedor</label>
-            <select id="inputProd" class="form-control" name="product_id">
+            <label for="inputSupp">Fornecedor</label>
+            <select id="inputSupp" class="form-control" name="supplier_id">
                 <option value="none" selected disabled hidden>Selecionar...</option>
                 @foreach ($suppliers as $supplier)
                 <option value="{{ $supplier->id }}" {{ old('supplier_id') == $supplier->id ? 'selected' : '' }}>{{ $supplier->name }}</option>
@@ -59,7 +59,7 @@
         <tbody>
             @forelse ($supplierorders as $supplierorder)
             <tr>
-                <td>{{ $supplierorders->id }}</td>
+                <td>{{ $supplierorder->id }}</td>
                 <td>{{ $supplierorder->product->name }}</td>
                 <td>{{ $supplierorder->supplier->name }}</td>
                 <td>{{ $supplierorder->quantity }}</td>

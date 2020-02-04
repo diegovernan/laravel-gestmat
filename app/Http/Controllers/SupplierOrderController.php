@@ -27,6 +27,15 @@ class SupplierOrderController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $supplierorder = new SupplierOrder();
+        $supplierorder->user_id = auth()->user()->id;
+        $supplierorder->product_id = $request->product_id;
+        $supplierorder->supplier_id = $request->supplier_id;
+        $supplierorder->quantity = $request->quantity;
+        $supplierorder->order_at = '1/1/2';
+
+        $supplierorder->save();
+
+        return redirect()->back()->with('success', 'Solicitação enviada com sucesso!');
     }
 }

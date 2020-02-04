@@ -13,7 +13,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Route::is('supplierorders') ? 'active' : '' }}" href="{{ route('supplierorders') }}">
                     <span data-feather="send"></span>
                     Pedidos
                 </a>

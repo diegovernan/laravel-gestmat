@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SupplierOrderMail;
 use App\SupplierOrder;
 use App\Supplier;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class SupplierOrderController extends Controller
 {
@@ -35,6 +37,8 @@ class SupplierOrderController extends Controller
         $supplierorder->order_at = '1/1/2';
 
         $supplierorder->save();
+
+        Mail::to('teste@teste.com')->send(new SupplierOrderMail($supplierorder));
 
         return redirect()->back()->with('success', 'Solicitação enviada com sucesso!');
     }

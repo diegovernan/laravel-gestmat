@@ -72,8 +72,10 @@
                 <td class="{{ $supplierorder->order_at >= date('Y-m-d') ? 'text-success' : 'text-danger' }}">
                     {{ $supplierorder->order_at->format('d/m/Y') }}
                 </td>
-                <td class="{{ $supplierorder->arrived == 1 ? 'text-success' : 'text-danger' }}">
-                    {{ $supplierorder->arrived == 1 ? 'sim' : 'não' }}
+                <td>
+                    <button class="btn {{ $supplierorder->arrived == 1 ? 'btn-outline-success' : 'btn-outline-danger' }} btn-sm">
+                        {{ $supplierorder->arrived == 1 ? 'Sim' : 'Não' }}
+                    </button>
                 </td>
             </tr>
             @empty

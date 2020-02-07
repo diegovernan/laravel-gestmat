@@ -9,6 +9,8 @@ class SupplierOrder extends Model
     protected $table = 'supplierorders';
 
     protected $guarded = [];
+    
+    protected $dates = ['order_at'];
 
     public function user()
     {

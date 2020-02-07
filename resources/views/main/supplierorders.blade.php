@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Input1">Data para entrega</label>
+            <label for="Input1">Prazo para entrega</label>
             <input type="date" class="form-control" id="Input2" name="order_at" value="">
         </div>
 
@@ -57,6 +57,7 @@
                 <th>Produto</th>
                 <th>Fornecedor</th>
                 <th>Quantidade</th>
+                <th>Entrega</th>
                 <th>Recebido</th>
             </tr>
         </thead>
@@ -68,7 +69,12 @@
                 <td>{{ $supplierorder->product->name }}</td>
                 <td>{{ $supplierorder->supplier->name }}</td>
                 <td>{{ $supplierorder->quantity }}</td>
-                <td>{{ $supplierorder->arrived }}</td>
+                <td class="{{ $supplierorder->order_at >= date('Y-m-d') ? 'text-success' : 'text-danger' }}">
+                    {{ $supplierorder->order_at->format('d/m/Y') }}
+                </td>
+                <td class="{{ $supplierorder->arrived == 1 ? 'text-success' : 'text-danger' }}">
+                    {{ $supplierorder->arrived == 1 ? 'sim' : 'não' }}
+                </td>
             </tr>
             @empty
             <tr>

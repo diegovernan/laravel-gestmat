@@ -1,12 +1,11 @@
 @component('mail::message')
-# Introduction
+Solicitação para {{ $supplierorder->supplier->name }}
 
-The body of your message.
+Produto: {{ $supplierorder->product->name }}
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
+Quantidade: {{ $supplierorder->quantity }}
 
-Thanks,<br>
-{{ config('app.name') }}
+Data de entrega: {{ $supplierorder->order_at->format('d/m/Y') }}
+
+Att, {{ $supplierorder->user->name }}
 @endcomponent

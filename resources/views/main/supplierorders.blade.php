@@ -73,9 +73,13 @@
                     {{ $supplierorder->order_at->format('d/m/Y') }}
                 </td>
                 <td>
-                    <button class="btn {{ $supplierorder->arrived == 1 ? 'btn-outline-success' : 'btn-outline-danger' }} btn-sm">
-                        {{ $supplierorder->arrived == 1 ? 'Sim' : 'Não' }}
-                    </button>
+                    <form method="post" action="{{ route('supplierorder.update', $supplierorder->id) }}">
+                        @csrf
+                        @method('PATCH')
+                        <button type="submit" class="btn {{ $supplierorder->arrived == 1 ? 'btn-outline-success' : 'btn-outline-danger' }} btn-sm">
+                            {{ $supplierorder->arrived == 1 ? 'Sim' : 'Não' }}
+                        </button>
+                    </form>
                 </td>
             </tr>
             @empty

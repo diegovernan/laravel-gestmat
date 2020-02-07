@@ -42,4 +42,17 @@ class SupplierOrderController extends Controller
 
         return redirect()->back()->with('success', 'Solicitação enviada com sucesso!');
     }
+
+    public function update(Request $request, SupplierOrder $supplierorder)
+    {
+        if ($supplierorder->arrived == 0) {
+            $supplierorder->arrived = 1;
+        } else {
+            $supplierorder->arrived = 0;
+        }
+
+        $supplierorder->save();
+
+        return redirect()->back()->with('success', 'Solicitação atualizada com sucesso!');
+    }
 }

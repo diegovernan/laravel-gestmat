@@ -9,6 +9,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/supplierorders', 'SupplierOrderController@index')->name('supplierorders');
 Route::post('/supplierorders', 'SupplierOrderController@store')->name('supplierorders.store');
+Route::patch('/supplierorders/{supplierorder}', 'SupplierOrderController@update')->name('supplierorder.update');
 
 // Cadastro
 Route::get('/suppliers', 'SupplierController@index')->name('suppliers');

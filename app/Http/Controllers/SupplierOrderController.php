@@ -34,7 +34,7 @@ class SupplierOrderController extends Controller
         $supplierorder->product_id = $request->product_id;
         $supplierorder->supplier_id = $request->supplier_id;
         $supplierorder->quantity = $request->quantity;
-        $supplierorder->order_at = '1/1/2';
+        $supplierorder->order_at = $request->order_at;
 
         $supplierorder->save();
 

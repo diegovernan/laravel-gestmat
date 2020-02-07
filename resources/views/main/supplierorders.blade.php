@@ -34,6 +34,11 @@
             <input type="number" class="form-control" id="Input1" name="quantity" value="">
         </div>
 
+        <div class="form-group">
+            <label for="Input1">Data para entrega</label>
+            <input type="date" class="form-control" id="Input2" name="order_at" value="">
+        </div>
+
         <div class="text-center">
             <button type="submit" class="btn btn-success">Enviar</button>
         </div>

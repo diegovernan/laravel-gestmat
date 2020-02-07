@@ -38,7 +38,7 @@ class SupplierOrderController extends Controller
 
         $supplierorder->save();
 
-        Mail::to('teste@teste.com')->send(new SupplierOrderMail($supplierorder));
+        Mail::to($supplierorder->supplier->email)->send(new SupplierOrderMail($supplierorder));
 
         return redirect()->back()->with('success', 'Solicitação enviada com sucesso!');
     }

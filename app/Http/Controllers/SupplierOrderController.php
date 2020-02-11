@@ -52,6 +52,7 @@ class SupplierOrderController extends Controller
             $supplierorder->arrived = 1;
         } else {
             Inventory::where('product_id', $supplierorder->product_id)->decrement('available_quantity', $supplierorder->quantity);
+
             $supplierorder->arrived = 0;
         }
 

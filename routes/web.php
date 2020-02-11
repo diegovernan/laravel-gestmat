@@ -11,6 +11,8 @@ Route::get('/supplierorders', 'SupplierOrderController@index')->name('supplieror
 Route::post('/supplierorders', 'SupplierOrderController@store')->name('supplierorders.store');
 Route::patch('/supplierorders/{supplierorder}', 'SupplierOrderController@update')->name('supplierorder.update');
 
+Route::get('/customerorders', 'CustomerOrderController@index')->name('customerorders');
+
 // Cadastro
 Route::get('/suppliers', 'SupplierController@index')->name('suppliers');
 Route::post('/suppliers', 'SupplierController@store')->name('suppliers.store');

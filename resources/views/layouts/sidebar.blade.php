@@ -20,7 +20,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link {{ Route::is('customerorders') ? 'active' : '' }}" href="{{ route('customerorders') }}">
                     <span data-feather="shopping-cart"></span>
                     Vendas
                 </a>

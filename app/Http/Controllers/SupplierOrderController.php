@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\SupplierOrderMail;
 use App\SupplierOrder;
+use App\Inventory;
 use App\Supplier;
 use App\Product;
+use App\Mail\SupplierOrderMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -46,8 +47,11 @@ class SupplierOrderController extends Controller
     public function update(Request $request, SupplierOrder $supplierorder)
     {
         if ($supplierorder->arrived == 0) {
+            Inventory::where('product_id', $supplierorder->product_id)->increment('available_quantity', $supplierorder->quantity);
+
             $supplierorder->arrived = 1;
         } else {
+            Inventory::where('product_id', $supplierorder->product_id)->decrement('available_quantity', $supplierorder->quantity);
             $supplierorder->arrived = 0;
         }
 

@@ -7,7 +7,7 @@
 
     @include('alerts.messages')
 
-    <form method="post" action="">
+    <form method="post" action="{{ route('customerorders.store') }}">
         @csrf
         <div class="form-group">
             <label for="inputProd">Produto</label>
@@ -56,8 +56,9 @@
                 <th>#</th>
                 <th>Produto</th>
                 <th>Cliente</th>
+                <th>Data</th>
                 <th>Quantidade</th>
-                <th>Venda</th>
+                <th>Preço</th>
             </tr>
         </thead>
 
@@ -67,14 +68,15 @@
                 <td>{{ $customerorder->id }}</td>
                 <td>{{ $customerorder->product->name }}</td>
                 <td>{{ $customerorder->customer->name }}</td>
-                <td>{{ $supplierorder->quantity }}</td>
                 <td class="{{ $customerorder->order_at >= date('Y-m-d') ? 'text-success' : 'text-danger' }}">
                     {{ $customerorder->order_at->format('d/m/Y') }}
                 </td>
+                <td>{{ $customerorder->quantity }}</td>
+                <td>x</td>
             </tr>
             @empty
             <tr>
-                <td colspan="5" class="text-center">Nenhuma venda encontrada...</td>
+                <td colspan="6" class="text-center">Nenhuma venda encontrada...</td>
             </tr>
             @endforelse
         </tbody>

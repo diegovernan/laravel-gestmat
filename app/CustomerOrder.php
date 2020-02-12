@@ -8,6 +8,8 @@ class CustomerOrder extends Model
 {
     protected $guarded = [];
 
+    protected $dates = ['order_at'];
+
     public function user()
     {
         return $this->belongsTo(User::class);

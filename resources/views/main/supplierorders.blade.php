@@ -7,7 +7,7 @@
 
     @include('alerts.messages')
 
-    <form method="post" action="">
+    <form method="post" action="{{ route('supplierorders.store') }}">
         @csrf
         <div class="form-group">
             <label for="inputProd">Produto</label>
@@ -35,7 +35,7 @@
         </div>
 
         <div class="form-group">
-            <label for="Input1">Prazo para entrega</label>
+            <label for="Input2">Prazo para entrega</label>
             <input type="date" class="form-control" id="Input2" name="order_at" value="">
         </div>
 
@@ -84,7 +84,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="5" class="text-center">Nenhuma solicitação encontrada...</td>
+                <td colspan="6" class="text-center">Nenhuma solicitação encontrada...</td>
             </tr>
             @endforelse
         </tbody>

@@ -31,9 +31,10 @@ class CustomerOrderController extends Controller
         $customerorder = new CustomerOrder();
         $customerorder->user_id = auth()->user()->id;
         $customerorder->product_id = $request->product_id;
-        $customerorder->supplier_id = $request->customer_id;
-        $customerorder->quantity = $request->quantity;
+        $customerorder->customer_id = $request->customer_id;
         $customerorder->order_at = $request->order_at;
+        $customerorder->quantity = $request->quantity;
+        $customerorder->price = $request->quantity * $customerorder->product->price;
 
         $customerorder->save();
 

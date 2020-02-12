@@ -13,7 +13,7 @@ class CreateSupplierOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('supplierorders', function (Blueprint $table) {
+        Schema::create('supplier_orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
@@ -36,6 +36,6 @@ class CreateSupplierOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supplierorders');
+        Schema::dropIfExists('supplier_orders');
     }
 }

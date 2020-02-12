@@ -38,6 +38,8 @@ class CustomerOrderController extends Controller
 
         $customerorder->save();
 
+        Inventory::where('product_id', $customerorder->product_id)->increment('sold_quantity', $customerorder->quantity);
+
         Inventory::where('product_id', $customerorder->product_id)->decrement('available_quantity', $customerorder->quantity);
 
         return redirect()->back()->with('success', 'Solicitação enviada com sucesso!');

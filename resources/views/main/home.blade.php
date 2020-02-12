@@ -35,7 +35,7 @@
                 <td>{{ $inventory->product->name }}</td>
                 <td>R$ {{ $inventory->product->price }}</td>
                 <td>{{ $inventory->available_quantity }}</td>
-                <td>x</td>
+                <td>{{ $inventory->sold_quantity }}</td>
             </tr>
             @empty
             <tr>

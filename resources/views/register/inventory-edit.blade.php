@@ -21,13 +21,18 @@
         </div>
 
         <div class="form-group">
-            <label for="Input1">Quantidade disponível</label>
-            <input type="number" class="form-control" id="Input1" name="available_quantity" value="{{ old('available_quantity') ?? $inventory->available_quantity }}">
+            <label for="Input1">Quantidade mínima</label>
+            <input type="number" class="form-control" id="Input1" name="minimum_quantity" value="{{ old('minimum_quantity') ?? $inventory->minimum_quantity }}">
         </div>
 
         <div class="form-group">
-            <label for="Input2">Quantidade mínima</label>
-            <input type="number" class="form-control" id="Input2" name="minimum_quantity" value="{{ old('minimum_quantity') ?? $inventory->minimum_quantity }}">
+            <label for="Input2">Quantidade disponível</label>
+            <input type="number" class="form-control" id="Input2" name="available_quantity" value="{{ old('available_quantity') ?? $inventory->available_quantity }}">
+        </div>
+
+        <div class="form-group">
+            <label for="Input3">Quantidade vendida</label>
+            <input type="number" class="form-control" id="Input3" name="sold_quantity" value="{{ old('sold_quantity') ?? $inventory->sold_quantity }}">
         </div>
 
         <div class="text-center">
@@ -43,8 +48,9 @@
 <div class="pb-5">
     <p>ID: {{ $inventory->id }}</p>
     <p>Nome: {{ $inventory->product->name }}</p>
-    <p>Quantidade disponível: {{ $inventory->available_quantity }}</p>
     <p>Quantidade mínima: {{ $inventory->minimum_quantity }}</p>
+    <p>Quantidade disponível: {{ $inventory->available_quantity }}</p>
+    <p>Quantidade vendida: {{ $inventory->sold_quantity }}</p>
 
     <a href="{{ route('inventory') }}" type="button" class="btn btn-dark">Voltar</a>
 </div>

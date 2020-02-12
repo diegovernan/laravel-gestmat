@@ -27,8 +27,9 @@ class InventoryController extends Controller
         $inventory = new Inventory();
         $inventory->user_id = auth()->user()->id;
         $inventory->product_id = $request->product_id;
-        $inventory->available_quantity = $request->available_quantity;
         $inventory->minimum_quantity = $request->minimum_quantity;
+        $inventory->available_quantity = $request->available_quantity;
+        $inventory->sold_quantity = $request->sold_quantity;
 
         $inventory->save();
 
@@ -46,8 +47,9 @@ class InventoryController extends Controller
     {
         $inventory->user_id = auth()->user()->id;
         $inventory->product_id = $request->product_id;
-        $inventory->available_quantity = $request->available_quantity;
         $inventory->minimum_quantity = $request->minimum_quantity;
+        $inventory->available_quantity = $request->available_quantity;
+        $inventory->sold_quantity = $request->sold_quantity;
 
         $inventory->save();
 

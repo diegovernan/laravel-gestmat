@@ -20,13 +20,18 @@
         </div>
 
         <div class="form-group">
-            <label for="Input1">Quantidade disponível</label>
-            <input type="number" class="form-control" id="Input1" name="available_quantity" value="">
+            <label for="Input1">Quantidade mínima</label>
+            <input type="number" class="form-control" id="Input1" name="minimum_quantity" value="">
         </div>
 
         <div class="form-group">
-            <label for="Input2">Quantidade mínima</label>
-            <input type="number" class="form-control" id="Input2" name="minimum_quantity" value="">
+            <label for="Input2">Quantidade disponível</label>
+            <input type="number" class="form-control" id="Input2" name="available_quantity" value="">
+        </div>
+
+        <div class="form-group">
+            <label for="Input3">Quantidade vendida</label>
+            <input type="number" class="form-control" id="Input3" name="sold_quantity" value="">
         </div>
 
         <div class="text-center">
@@ -47,6 +52,7 @@
                 <th>Produto</th>
                 <th>Quantidade mínima</th>
                 <th>Quantidade disponível</th>
+                <th>Quantidade vendida</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -58,6 +64,7 @@
                 <td>{{ $inventory->product->name }}</td>
                 <td>{{ $inventory->minimum_quantity }}</td>
                 <td class="{{ $inventory->available_quantity > $inventory->minimum_quantity ? 'text-success' : 'text-danger' }}">{{ $inventory->available_quantity }}</td>
+                <td>{{ $inventory->sold_quantity }}</td>
                 <td>
                     <div class="d-flex">
                         <a href="{{ route('inventory.edit', $inventory->id) }}" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>
@@ -72,7 +79,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="5" class="text-center">Nenhum produto em estoque...</td>
+                <td colspan="6" class="text-center">Nenhum produto em estoque...</td>
             </tr>
             @endforelse
         </tbody>

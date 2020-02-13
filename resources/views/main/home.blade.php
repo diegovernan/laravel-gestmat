@@ -10,9 +10,57 @@
     </div>
 </div>
 
-<canvas class="my-4 w-100" id="myChart" width="1000" height="250"></canvas>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h5 class="card-title">Primary card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
 
-<hr>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h5 class="card-title">Success card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-white bg-danger mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h5 class="card-title">Danger card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+                <h5 class="card-title">Warning card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="col-md-6">
+        <canvas class="my-4 w-100" id="myChart1"></canvas>
+    </div>
+
+    <div class="col-md-6">
+        <canvas class="my-4 w-100" id="myChart2"></canvas>
+    </div>
+</div>
 
 <h2 class="text-center py-5">Produtos disponíveis</h2>
 
@@ -56,15 +104,10 @@
 
 @section('scripts')
 <script>
-/* globals Chart:false, feather:false */
-
-(function () {
-    'use strict'
-
-    // Graphs
-    var ctx = document.getElementById('myChart')
+    // Graphs myChart1
+    var ctx = document.getElementById('myChart1')
     // eslint-disable-next-line no-unused-vars
-    var myChart = new Chart(ctx, {
+    var myChart1 = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: [
@@ -97,25 +140,41 @@
                     29
                 ],
                 lineTension: 0,
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                backgroundColor: '#1E90FF',
                 borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 1,
                 pointBackgroundColor: '#007bff'
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: false
-                    }
-                }]
-            },
-            legend: {
-                display: false
-            }
+            responsive: true
+        }
+    });
+
+    // Graphs myChart2
+    var ctx = document.getElementById('myChart2')
+    // eslint-disable-next-line no-unused-vars
+    var myChart2 = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: [
+                'Vermelho',
+                'Verde',
+                'Blue'
+            ],
+            datasets: [{
+                data: [
+                    50,
+                    30,
+                    20
+                ],
+                backgroundColor: ['#B22222', '#228B22', '#007bff'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
         }
     })
-}())
 </script>
 @endsection

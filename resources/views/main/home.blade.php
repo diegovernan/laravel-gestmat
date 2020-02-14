@@ -13,35 +13,47 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <div class="col-md-3">
         <div class="card text-white bg-primary mb-3">
-            <div class="card-header">Fornecedores</div>
-            <div class="card-body">
+            <div class="card-header d-flex justify-content-between">
+                Fornecedores
+                <span data-feather="truck"></span>
+            </div>
+            <div class="card-body text-center">
                 <h3 class="card-title">{{ $suppliercount }}</h3>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="card text-white bg-success mb-3">
-            <div class="card-header">Produtos</div>
-            <div class="card-body">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header d-flex justify-content-between">
+                Produtos
+                <span data-feather="package"></span>
+            </div>
+            <div class="card-body text-center">
                 <h3 class="card-title">{{ $productcount }}</h3>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="card text-white bg-danger mb-3">
-            <div class="card-header">Estoque</div>
-            <div class="card-body">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header d-flex justify-content-between">
+                Estoque
+                <span data-feather="archive"></span>
+            </div>
+            <div class="card-body text-center">
                 <h3 class="card-title">{{ $inventorycount }}</h3>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
-        <div class="card text-white bg-warning mb-3">
-            <div class="card-header">Clientes</div>
-            <div class="card-body">
+        <div class="card text-white bg-danger mb-3">
+            <div class="card-header d-flex justify-content-between">
+                Clientes
+                <span data-feather="users"></span>
+            </div>
+            <div class="card-body text-center">
                 <h3 class="card-title">{{ $customercount }}</h3>
             </div>
         </div>

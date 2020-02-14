@@ -61,11 +61,11 @@
 </div>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <div class="col-md-6">
+    <div class="col-md-7">
         <canvas class="my-4 w-100" id="myChart1"></canvas>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-5">
         <canvas class="my-4 w-100" id="myChart2"></canvas>
     </div>
 </div>
@@ -147,6 +147,7 @@
                     22,
                     29
                 ],
+                label: 'Vendas',
                 lineTension: 0,
                 backgroundColor: '#1E90FF',
                 borderColor: 'rgba(54, 162, 235, 1)',

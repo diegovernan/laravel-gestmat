@@ -13,40 +13,36 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <div class="col-md-3">
         <div class="card text-white bg-primary mb-3">
-            <div class="card-header">Header</div>
+            <div class="card-header">Fornecedores</div>
             <div class="card-body">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h3 class="card-title">{{ $suppliercount }}</h3>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="card text-white bg-success mb-3">
-            <div class="card-header">Header</div>
+            <div class="card-header">Produtos</div>
             <div class="card-body">
-                <h5 class="card-title">Success card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h3 class="card-title">{{ $productcount }}</h3>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="card text-white bg-danger mb-3">
-            <div class="card-header">Header</div>
+            <div class="card-header">Estoque</div>
             <div class="card-body">
-                <h5 class="card-title">Danger card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h3 class="card-title">{{ $inventorycount }}</h3>
             </div>
         </div>
     </div>
 
     <div class="col-md-3">
         <div class="card text-white bg-warning mb-3">
-            <div class="card-header">Header</div>
+            <div class="card-header">Clientes</div>
             <div class="card-body">
-                <h5 class="card-title">Warning card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h3 class="card-title">{{ $customercount }}</h3>
             </div>
         </div>
     </div>

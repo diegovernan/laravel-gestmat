@@ -92,7 +92,7 @@
     </table>
 
     <div class="d-flex">
-        <div class="mx-auto py-2">
+        <div class="mx-auto py-3">
             {{ $inventories->links() }}
         </div>
     </div>

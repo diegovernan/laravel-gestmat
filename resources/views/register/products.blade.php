@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container py-5">
-    <h2 class="text-center">Cadastrar produto</h2>
+    <h2 class="text-center">Cadastrar</h2>
 
     @include('alerts.messages')
 
@@ -27,7 +27,7 @@
 
 <hr>
 
-<h2 class="text-center py-5">Produtos cadastrados</h2>
+<h2 class="text-center py-5">Produtos</h2>
 
 <div class="table-responsive pb-5">
     <table class="table table-striped table-sm">

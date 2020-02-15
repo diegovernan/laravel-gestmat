@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container py-5">
-    <h2 class="text-center">Cadastrar item</h2>
+    <h2 class="text-center">Cadastrar</h2>
 
     @include('alerts.messages')
 
@@ -42,14 +42,14 @@
 
 <hr>
 
-<h2 class="text-center py-5">Itens cadastrados</h2>
+<h2 class="text-center py-5">Estoque</h2>
 
 <div class="table-responsive pb-5">
     <table class="table table-striped table-sm">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Produto</th>
+                <th>Item</th>
                 <th>Quantidade mínima</th>
                 <th>Quantidade disponível</th>
                 <th>Quantidade vendida</th>
@@ -79,7 +79,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="6" class="text-center">Nenhum produto em estoque...</td>
+                <td colspan="6" class="text-center">Nenhum item em estoque...</td>
             </tr>
             @endforelse
         </tbody>

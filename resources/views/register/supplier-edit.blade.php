@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container py-5">
-    <h2 class="text-center">Atualizar fornecedor</h2>
+    <h2 class="text-center">Atualizar</h2>
 
     @include('alerts.messages')
 

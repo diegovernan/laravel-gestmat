@@ -118,7 +118,7 @@
     var myChart1 = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels:  <?php echo json_encode($months_values); ?>,
+            labels: <?php echo json_encode($months_values); ?>,
             datasets: [{
                 data: <?php echo json_encode($customerorder_values); ?>,
                 label: 'Vendas',
@@ -140,17 +140,9 @@
     var myChart2 = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: [
-                'Vermelho',
-                'Verde',
-                'Blue'
-            ],
+            labels: <?php echo json_encode($arrived_suppliers); ?>,
             datasets: [{
-                data: [
-                    50,
-                    30,
-                    20
-                ],
+                data: <?php echo json_encode($supplierorder_values); ?>,
                 backgroundColor: ['#B22222', '#228B22', '#007bff'],
                 borderWidth: 1
             }]

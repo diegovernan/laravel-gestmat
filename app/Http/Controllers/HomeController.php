@@ -8,6 +8,7 @@ use App\Product;
 use App\Inventory;
 use App\Customer;
 use App\CustomerOrder;
+use App\SupplierOrder;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -58,6 +59,18 @@ class HomeController extends Controller
 
         $customerorder_values = array_values($customerorder_values);
 
-        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'customerorder_values'));
+        // Gráfico de pedidos
+        $arrived_suppliers = SupplierOrder::where('user_id', auth()->user()->id)->where('arrived', 1)->pluck('supplier_id')->toArray();
+        $arrived_suppliers = array_values($arrived_suppliers);
+
+        $supplierorder_values = [];
+
+        foreach ($arrived_suppliers as $supplier) {
+            $supplierorder_values[] = SupplierOrder::where('user_id', auth()->user()->id)->where('supplier_id', $supplier)->sum('quantity');
+        }
+
+        $supplierorder_values = array_values($supplierorder_values);
+
+        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'customerorder_values', 'arrived_suppliers', 'supplierorder_values'));
     }
 }

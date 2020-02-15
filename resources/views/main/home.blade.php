@@ -118,17 +118,17 @@
     var myChart1 = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: <?php echo json_encode($months_values); ?>,
+            labels: <?= json_encode($months_values); ?>,
             datasets: [{
-                    data: <?php echo json_encode($customerorder_values); ?>,
-                    label: 'Vendas',
-                    backgroundColor: '#1E90FF'
-                },
-                {
-                    data: <?php echo json_encode($supplierorder_values); ?>,
+                    data: <?= json_encode($supplierorder_values); ?>,
                     label: 'Pedidos',
                     lineTension: 0,
                     backgroundColor: '#B22222'
+                },
+                {
+                    data: <?= json_encode($customerorder_values); ?>,
+                    label: 'Vendas',
+                    backgroundColor: '#1E90FF'
                 }
             ]
         },

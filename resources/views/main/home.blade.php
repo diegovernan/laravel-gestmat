@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 border-bottom">
     <h1 class="h2">Olá, {{ $user->name }}!</h1>
 
     <div class="btn-toolbar mb-2 mb-md-0">
@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 border-bottom">
     <div class="col-md-3">
         <div class="card text-white bg-primary mb-3">
             <div class="card-header d-flex justify-content-between">
@@ -60,24 +60,16 @@
     </div>
 </div>
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <div class="col-md-7">
-        <canvas class="my-4 w-100" id="myChart1"></canvas>
-    </div>
-
-    <div class="col-md-5">
-        <canvas class="my-4 w-100" id="myChart2"></canvas>
-    </div>
+<div class="py-3">
+    <canvas class="my-4 w-100" id="myChart" height="380em"></canvas>
 </div>
 
-<h2 class="text-center py-5">Produtos disponíveis</h2>
-
-<div class="table-responsive pb-5">
+<div class="table-responsive py-3">
     <table class="table table-striped table-sm">
         <thead>
             <tr>
                 <th>#</th>
-                <th>Nome</th>
+                <th>Produto</th>
                 <th>Preço</th>
                 <th>Estoque</th>
                 <th>Vendidos</th>
@@ -112,9 +104,8 @@
 
 @section('scripts')
 <script>
-    // Graphs myChart1
-    var ctx = document.getElementById('myChart1')
-    // eslint-disable-next-line no-unused-vars
+    var ctx = document.getElementById('myChart')
+    // Gráfico
     var myChart1 = new Chart(ctx, {
         type: 'bar',
         data: {
@@ -136,23 +127,5 @@
             responsive: true
         }
     });
-
-    // Graphs myChart2
-    var ctx = document.getElementById('myChart2')
-    // eslint-disable-next-line no-unused-vars
-    var myChart2 = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: <?php echo json_encode($arrived_suppliers); ?>,
-            datasets: [{
-                data: <?php echo json_encode($supplierorder_values); ?>,
-                backgroundColor: ['#B22222', '#228B22', '#007bff'],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true
-        }
-    })
 </script>
 @endsection

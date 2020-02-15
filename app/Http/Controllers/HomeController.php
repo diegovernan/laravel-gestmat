@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         $customercount = Customer::where('user_id', auth()->user()->id)->get()->count();
 
-        // Gráfico de vendas
+        // Gráfico
         $months = [
             '01' => 'Jan',
             '02' => 'Fev',
@@ -62,18 +62,6 @@ class HomeController extends Controller
         $supplierorder_values = array_values($supplierorder_values);
         $customerorder_values = array_values($customerorder_values);
 
-        // Gráfico de pedidos
-        $arrived_suppliers = SupplierOrder::where('user_id', auth()->user()->id)->where('arrived', 1)->pluck('supplier_id')->toArray();
-        $arrived_suppliers = array_values($arrived_suppliers);
-
-        $supplierorder_values = [];
-
-        foreach ($arrived_suppliers as $supplier) {
-            $supplierorder_values[] = SupplierOrder::where('user_id', auth()->user()->id)->where('supplier_id', $supplier)->sum('quantity');
-        }
-
-        $supplierorder_values = array_values($supplierorder_values);
-
-        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'supplierorder_values', 'customerorder_values', 'arrived_suppliers', 'supplierorder_values'));
+        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'supplierorder_values', 'customerorder_values'));
     }
 }

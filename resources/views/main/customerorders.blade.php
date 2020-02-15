@@ -40,7 +40,7 @@
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-success">Concluir</button>
+            <button type="submit" class="btn btn-info">Concluir</button>
         </div>
     </form>
 </div>

@@ -21,12 +21,12 @@
         </div>
 
         <div class="form-group">
-            <label for="Input2">E-mail</label>
-            <input type="email" class="form-control" id="Input2" name="email" value="{{ old('email') ?? $supplier->email }}">
+            <label for="Input3">E-mail</label>
+            <input type="email" class="form-control" id="Input3" name="email" value="{{ old('email') ?? $supplier->email }}">
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-success">Salvar</button>
+            <button type="submit" class="btn btn-info">Salvar</button>
         </div>
     </form>
 </div>

@@ -120,14 +120,17 @@
         data: {
             labels: <?php echo json_encode($months_values); ?>,
             datasets: [{
-                data: <?php echo json_encode($customerorder_values); ?>,
-                label: 'Vendas',
-                lineTension: 0,
-                backgroundColor: '#1E90FF',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1,
-                pointBackgroundColor: '#007bff'
-            }]
+                    data: <?php echo json_encode($customerorder_values); ?>,
+                    label: 'Vendas',
+                    backgroundColor: '#1E90FF'
+                },
+                {
+                    data: <?php echo json_encode($supplierorder_values); ?>,
+                    label: 'Pedidos',
+                    lineTension: 0,
+                    backgroundColor: '#B22222'
+                }
+            ]
         },
         options: {
             responsive: true

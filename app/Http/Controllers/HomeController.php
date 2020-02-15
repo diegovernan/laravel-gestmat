@@ -52,12 +52,15 @@ class HomeController extends Controller
         $months_values = array_values($months);
 
         $customerorder_values = [];
+        $supplierorder_values = [];
 
         foreach ($months_keys as $month) {
             $customerorder_values[] = CustomerOrder::where('user_id', auth()->user()->id)->whereYear('order_at', date('Y'))->whereMonth('order_at', $month)->sum('quantity');
+            $supplierorder_values[] = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('order_at', date('Y'))->whereMonth('order_at', $month)->sum('quantity');
         }
 
         $customerorder_values = array_values($customerorder_values);
+        $supplierorder_values = array_values($supplierorder_values);
 
         // Gráfico de pedidos
         $arrived_suppliers = SupplierOrder::where('user_id', auth()->user()->id)->where('arrived', 1)->pluck('supplier_id')->toArray();
@@ -71,6 +74,6 @@ class HomeController extends Controller
 
         $supplierorder_values = array_values($supplierorder_values);
 
-        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'customerorder_values', 'arrived_suppliers', 'supplierorder_values'));
+        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'customerorder_values', 'supplierorder_values', 'arrived_suppliers', 'supplierorder_values'));
     }
 }

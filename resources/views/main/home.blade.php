@@ -118,35 +118,9 @@
     var myChart1 = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: [
-                'Janeiro',
-                'Fevereiro',
-                'Março',
-                'Abril',
-                'Maio',
-                'Junho',
-                'Julho',
-                'Agosto',
-                'Setembro',
-                'Outubro',
-                'Novembro',
-                'Dezembro'
-            ],
+            labels:  <?php echo json_encode($months_values); ?>,
             datasets: [{
-                data: [
-                    10,
-                    13,
-                    21,
-                    18,
-                    25,
-                    15,
-                    17,
-                    27,
-                    28,
-                    20,
-                    22,
-                    29
-                ],
+                data: <?php echo json_encode($customerorder_values); ?>,
                 label: 'Vendas',
                 lineTension: 0,
                 backgroundColor: '#1E90FF',

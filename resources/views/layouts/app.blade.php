@@ -105,6 +105,8 @@
             jQuery('.money').mask("#0,00", {
                 reverse: true
             });
+
+            jQuery('.phone').mask('(00) 00000-0000');
         });
     </script>
     @yield('scripts')

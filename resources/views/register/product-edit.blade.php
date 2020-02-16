@@ -17,7 +17,7 @@
 
         <div class="form-group">
             <label for="Input2">Preço</label>
-            <input type="text" class="form-control" id="Input2" name="price" value="{{ old('price') ?? $product->price }}">
+            <input type="text" class="form-control money" id="Input2" name="price" value="{{ old('price') ?? $product->price }}">
         </div>
 
         <div class="text-center">
@@ -33,7 +33,7 @@
 <div class="pb-5">
     <p>ID: {{ $product->id }}</p>
     <p>Nome: {{ $product->name }}</p>
-    <p>Preço: R${{ $product->price }}</p>
+    <p>Preço: R$ {{ number_format($product->price, 2, ',', '.') }}</p>
 
     <a href="{{ route('products') }}" type="button" class="btn btn-dark">Voltar</a>
 </div>

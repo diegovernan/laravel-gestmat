@@ -72,7 +72,7 @@
                     {{ $customerorder->order_at->format('d/m/Y') }}
                 </td>
                 <td>{{ $customerorder->quantity }}</td>
-                <td>R$ {{ $customerorder->price }}</td>
+                <td>R$ {{ number_format($customerorder->price, 2, ',', '.') }}</td>
             </tr>
             @empty
             <tr>

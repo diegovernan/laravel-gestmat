@@ -16,7 +16,7 @@
 
         <div class="form-group">
             <label for="Input2">Preço</label>
-            <input type="text" class="form-control" id="Input2" name="price" value="">
+            <input type="text" class="form-control money" id="Input2" name="price" value="">
         </div>
 
         <div class="text-center">
@@ -45,7 +45,7 @@
             <tr>
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
-                <td>R$ {{ $product->price }}</td>
+                <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>
                 <td>
                     <div class="d-flex">
                         <a href="{{ route('product.edit', $product->id) }}" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>

@@ -24,7 +24,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->user_id = auth()->user()->id;
         $product->name = $request->name;
-        $product->price = $request->price;
+        $product->price = str_replace(",", ".", $request->price);
 
         $product->save();
 
@@ -40,7 +40,7 @@ class ProductController extends Controller
     {
         $product->user_id = auth()->user()->id;
         $product->name = $request->name;
-        $product->price = $request->price;
+        $product->price = str_replace(",", ".", $request->price);
 
         $product->save();
 

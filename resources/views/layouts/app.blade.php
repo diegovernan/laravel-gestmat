@@ -98,18 +98,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script>
-        feather.replace()
 
-        jQuery(document).ready(function() {
-            jQuery('.money').mask("#0,00", {
-                reverse: true
-            });
+    <script src="{{ asset('js/script.js') }}"></script>
 
-            jQuery('.phone').mask('(00) 00000-0000');
-        });
-    </script>
-    @yield('scripts')
+    @yield('chartjs')
 </body>
 
 </html>

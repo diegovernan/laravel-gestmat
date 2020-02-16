@@ -100,7 +100,7 @@
 
 @endsection
 
-@section('scripts')
+@section('chartjs')
 <script>
     var ctx = document.getElementById('myChart')
     // Gráfico

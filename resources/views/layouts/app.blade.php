@@ -11,6 +11,13 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -27,9 +34,6 @@
             }
         }
     </style>
-
-    <!-- Custom styles for this template -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>

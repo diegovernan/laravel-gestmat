@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Supplier;
+use App\Http\Requests\SupplierRequest;
 use Illuminate\Http\Request;
 
 class SupplierController extends Controller
@@ -11,7 +12,7 @@ class SupplierController extends Controller
     {
         $this->middleware(['auth', 'verified']);
     }
-    
+
     public function index()
     {
         $suppliers = Supplier::where('user_id', auth()->user()->id)->latest()->paginate(10);
@@ -19,7 +20,7 @@ class SupplierController extends Controller
         return view('register.suppliers', compact('suppliers'));
     }
 
-    public function store(Request $request)
+    public function store(SupplierRequest $request)
     {
         $supplier = new Supplier();
         $supplier->user_id = auth()->user()->id;
@@ -37,7 +38,7 @@ class SupplierController extends Controller
         return view('register.supplier-edit', compact('supplier'));
     }
 
-    public function update(Request $request, Supplier $supplier)
+    public function update(SupplierRequest $request, Supplier $supplier)
     {
         $supplier->user_id = auth()->user()->id;
         $supplier->name = $request->name;

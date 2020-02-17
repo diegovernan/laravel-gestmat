@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Http\Requests\CustomerRequest;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -19,7 +20,7 @@ class CustomerController extends Controller
         return view('register.customers', compact('customers'));
     }
 
-    public function store(Request $request)
+    public function store(CustomerRequest $request)
     {
         $customer = new Customer();
         $customer->user_id = auth()->user()->id;
@@ -37,7 +38,7 @@ class CustomerController extends Controller
         return view('register.customer-edit', compact('customer'));
     }
 
-    public function update(Request $request, Customer $customer)
+    public function update(CustomerRequest $request, Customer $customer)
     {
         $customer->user_id = auth()->user()->id;
         $customer->name = $request->name;

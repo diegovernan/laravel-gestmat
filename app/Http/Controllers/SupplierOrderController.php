@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\SupplierOrder;
+use App\Http\Requests\SupplierOrderRequest;
 use App\Inventory;
 use App\Supplier;
 use App\Product;
@@ -28,7 +29,7 @@ class SupplierOrderController extends Controller
         return view('main.supplierorders', compact('supplierorders', 'products', 'suppliers'));
     }
 
-    public function store(Request $request)
+    public function store(SupplierOrderRequest $request)
     {
         $supplierorder = new SupplierOrder();
         $supplierorder->user_id = auth()->user()->id;
@@ -44,7 +45,7 @@ class SupplierOrderController extends Controller
         return redirect()->back()->with('success', 'Solicitação enviada com sucesso!');
     }
 
-    public function update(Request $request, SupplierOrder $supplierorder)
+    public function update(SupplierOrderRequest $request, SupplierOrder $supplierorder)
     {
         if ($supplierorder->arrived == 0) {
             Inventory::where('product_id', $supplierorder->product_id)->increment('available_quantity', $supplierorder->quantity);

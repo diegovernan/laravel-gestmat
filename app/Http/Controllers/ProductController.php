@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Http\Requests\ProductRequest;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -19,7 +20,7 @@ class ProductController extends Controller
         return view('register.products', compact('products'));
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $product = new Product();
         $product->user_id = auth()->user()->id;
@@ -36,7 +37,7 @@ class ProductController extends Controller
         return view('register.product-edit', compact('product'));
     }
 
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
         $product->user_id = auth()->user()->id;
         $product->name = $request->name;

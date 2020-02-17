@@ -13,8 +13,8 @@
             <label for="inputProd">Produto</label>
             <select id="inputProd" class="form-control" name="product_id">
                 <option value="none" selected disabled hidden>Selecionar...</option>
-                @foreach ($products as $product)
-                <option value="{{ $product->product->id }}" {{ old('product_id') == $product->product->id ? 'selected' : '' }}>{{ $product->product->name }}</option>
+                @foreach ($inventory_products as $item)
+                <option value="{{ $item->product->id }}" {{ old('product_id') == $item->product->id ? 'selected' : '' }}>{{ $item->product->name }}</option>
                 @endforeach
             </select>
         </div>

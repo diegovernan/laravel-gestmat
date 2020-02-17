@@ -19,11 +19,11 @@ class CustomerOrderController extends Controller
     {
         $customerorders = CustomerOrder::where('user_id', auth()->user()->id)->latest()->paginate(10);
 
-        $products = Inventory::where('user_id', auth()->user()->id)->latest()->get();
+        $inventory_products = Inventory::where('user_id', auth()->user()->id)->latest()->get();
 
         $customers = Customer::where('user_id', auth()->user()->id)->latest()->get();
         
-        return view('main.customerorders', compact('customerorders', 'products', 'customers'));
+        return view('main.customerorders', compact('customerorders', 'inventory_products', 'customers'));
     }
 
     public function store(Request $request)

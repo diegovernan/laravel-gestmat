@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\InventoryRequest;
 use App\Inventory;
 use App\Product;
 use Illuminate\Http\Request;
@@ -22,7 +23,7 @@ class InventoryController extends Controller
         return view('register.inventory', compact('inventories', 'products'));
     }
 
-    public function store(Request $request)
+    public function store(InventoryRequest $request)
     {
         $inventory = new Inventory();
         $inventory->user_id = auth()->user()->id;
@@ -43,7 +44,7 @@ class InventoryController extends Controller
         return view('register.inventory-edit', compact('inventory', 'products'));
     }
 
-    public function update(Request $request, Inventory $inventory)
+    public function update(InventoryRequest $request, Inventory $inventory)
     {
         $inventory->user_id = auth()->user()->id;
         $inventory->product_id = $request->product_id;

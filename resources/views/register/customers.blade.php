@@ -11,17 +11,17 @@
         @csrf
         <div class="form-group">
             <label for="Input1">Nome</label>
-            <input type="text" class="form-control" id="Input1" name="name" value="">
+            <input type="text" class="form-control" id="Input1" name="name" value="{{ old('name') }}">
         </div>
 
         <div class="form-group">
             <label for="Input2">Telefone</label>
-            <input type="text" class="form-control phone" id="Input2" name="phone" value="">
+            <input type="text" class="form-control phone" id="Input2" name="phone" value="{{ old('phone') }}">
         </div>
 
         <div class="form-group">
             <label for="Input3">E-mail</label>
-            <input type="email" class="form-control" id="Input3" name="email" value="">
+            <input type="email" class="form-control" id="Input3" name="email" value="{{ old('email') }}">
         </div>
 
         <div class="text-center">

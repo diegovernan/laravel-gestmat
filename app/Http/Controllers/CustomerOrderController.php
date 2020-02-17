@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CustomerOrder;
+use App\Http\Requests\CustomerOrderRequest;
 use App\Inventory;
 use App\Customer;
 use App\Product;
@@ -22,11 +23,11 @@ class CustomerOrderController extends Controller
         $inventory_products = Inventory::where('user_id', auth()->user()->id)->latest()->get();
 
         $customers = Customer::where('user_id', auth()->user()->id)->latest()->get();
-        
+
         return view('main.customerorders', compact('customerorders', 'inventory_products', 'customers'));
     }
 
-    public function store(Request $request)
+    public function store(CustomerOrderRequest $request)
     {
         $customerorder = new CustomerOrder();
         $customerorder->user_id = auth()->user()->id;

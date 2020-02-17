@@ -19,7 +19,7 @@ class CustomerOrderController extends Controller
     {
         $customerorders = CustomerOrder::where('user_id', auth()->user()->id)->latest()->paginate(10);
 
-        $products = Product::where('user_id', auth()->user()->id)->latest()->get();
+        $products = Inventory::where('user_id', auth()->user()->id)->latest()->get();
 
         $customers = Customer::where('user_id', auth()->user()->id)->latest()->get();
         

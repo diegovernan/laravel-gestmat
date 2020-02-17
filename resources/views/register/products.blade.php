@@ -11,12 +11,12 @@
         @csrf
         <div class="form-group">
             <label for="Input1">Nome</label>
-            <input type="text" class="form-control" id="Input1" name="name" value="">
+            <input type="text" class="form-control" id="Input1" name="name" value="{{ old('name') }}">
         </div>
 
         <div class="form-group">
             <label for="Input2">Preço</label>
-            <input type="text" class="form-control money" id="Input2" name="price" value="">
+            <input type="text" class="form-control money" id="Input2" name="price" value="{{ old('price') }}">
         </div>
 
         <div class="text-center">

@@ -21,17 +21,17 @@
 
         <div class="form-group">
             <label for="Input1">Quantidade mínima</label>
-            <input type="number" class="form-control" id="Input1" name="minimum_quantity" value="">
+            <input type="number" class="form-control" id="Input1" name="minimum_quantity" value="{{ old('minimum_quantity') }}">
         </div>
 
         <div class="form-group">
             <label for="Input2">Quantidade disponível</label>
-            <input type="number" class="form-control" id="Input2" name="available_quantity" value="">
+            <input type="number" class="form-control" id="Input2" name="available_quantity" value="{{ old('available_quantity') }}">
         </div>
 
         <div class="form-group">
             <label for="Input3">Quantidade vendida</label>
-            <input type="number" class="form-control" id="Input3" name="sold_quantity" value="">
+            <input type="number" class="form-control" id="Input3" name="sold_quantity" value="{{ old('sold_quantity') }}">
         </div>
 
         <div class="text-center">

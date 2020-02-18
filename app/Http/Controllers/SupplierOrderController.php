@@ -45,14 +45,14 @@ class SupplierOrderController extends Controller
         return redirect()->back()->with('success', 'Solicitação enviada com sucesso!');
     }
 
-    public function update(SupplierOrderRequest $request, SupplierOrder $supplierorder)
+    public function update(Request $request, SupplierOrder $supplierorder)
     {
         if ($supplierorder->arrived == 0) {
-            Inventory::where('product_id', $supplierorder->product_id)->increment('available_quantity', $supplierorder->quantity);
+            Inventory::where('user_id', auth()->user()->id)->where('product_id', $supplierorder->product_id)->increment('available_quantity', $supplierorder->quantity);
 
             $supplierorder->arrived = 1;
         } else {
-            Inventory::where('product_id', $supplierorder->product_id)->decrement('available_quantity', $supplierorder->quantity);
+            Inventory::where('user_id', auth()->user()->id)->where('product_id', $supplierorder->product_id)->decrement('available_quantity', $supplierorder->quantity);
 
             $supplierorder->arrived = 0;
         }

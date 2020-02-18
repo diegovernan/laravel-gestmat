@@ -31,12 +31,12 @@
 
         <div class="form-group">
             <label for="Input1">Quantidade vendida</label>
-            <input type="number" class="form-control" id="Input1" name="quantity" value="">
+            <input type="number" class="form-control" id="Input1" name="quantity" value="{{ old('quantity') }}">
         </div>
 
         <div class="form-group">
             <label for="Input2">Data da venda</label>
-            <input type="date" class="form-control" id="Input2" name="order_at" value="">
+            <input type="date" class="form-control" id="Input2" name="order_at" value="{{ old('order_at') }}">
         </div>
 
         <div class="text-center">

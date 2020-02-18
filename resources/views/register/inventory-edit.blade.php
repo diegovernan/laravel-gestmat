@@ -36,7 +36,7 @@
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-info">Salvar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
         </div>
     </form>
 </div>

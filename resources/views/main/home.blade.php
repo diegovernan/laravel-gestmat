@@ -5,7 +5,7 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 top-home d-print-none">
     <h6>Olá, {{ $user->name }}!</h6>
 
-    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="document.title='relatorio_grafico';window.print()">Exportar</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="window.print()">Exportar</button>
 </div>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 d-print-none">

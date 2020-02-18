@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Inventory;
 use App\Report;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class ReportController extends Controller
      */
     public function index()
     {
-        return view('main.reports');
+        $inventories = Inventory::where('user_id', auth()->user()->id)->latest()->get();
+
+        return view('main.reports', compact('inventories'));
     }
 
     /**

@@ -15,7 +15,7 @@
                 <th>Preço unitário</th>
                 <th>Unidades disponíveis</th>
                 <th>Unidades vendidas</th>
-                <th>Preço total</th>
+                <th>Valor total</th>
             </tr>
         </thead>
 
@@ -36,7 +36,7 @@
             @endforelse
 
             <tr>
-                <td colspan="5">Total</td>
+                <td colspan="5">Receita</td>
                 <td>R$ {{ number_format($total_price, 2, ',', '.') }}</td>
             </tr>
         </tbody>

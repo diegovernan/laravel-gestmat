@@ -11,7 +11,7 @@ class ReportController extends Controller
 {
     public function index()
     {
-        $inventories = Inventory::where('user_id', auth()->user()->id)->latest()->get();
+        $inventories = Inventory::where('user_id', auth()->user()->id)->latest('updated_at')->get();
 
         $total_price = CustomerOrder::where('user_id', auth()->user()->id)->sum('price');
 

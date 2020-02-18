@@ -43,6 +43,6 @@ class CustomerOrderController extends Controller
 
         Inventory::where('product_id', $customerorder->product_id)->decrement('available_quantity', $customerorder->quantity);
 
-        return redirect()->back()->with('success', 'Solicitação enviada com sucesso!');
+        return redirect()->back()->with('success', 'Venda realizada com sucesso!');
     }
 }

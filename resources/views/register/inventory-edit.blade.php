@@ -27,12 +27,12 @@
 
         <div class="form-group">
             <label for="Input2">Quantidade disponível</label>
-            <input type="number" class="form-control" id="Input2" name="available_quantity" value="{{ old('available_quantity') ?? $inventory->available_quantity }}">
+            <input type="number" class="form-control" id="Input2" name="available_quantity" value="{{ old('available_quantity') ?? $inventory->available_quantity }}" disabled>
         </div>
 
         <div class="form-group">
             <label for="Input3">Quantidade vendida</label>
-            <input type="number" class="form-control" id="Input3" name="sold_quantity" value="{{ old('sold_quantity') ?? $inventory->sold_quantity }}">
+            <input type="number" class="form-control" id="Input3" name="sold_quantity" value="{{ old('sold_quantity') ?? $inventory->sold_quantity }}" disabled>
         </div>
 
         <div class="text-center">

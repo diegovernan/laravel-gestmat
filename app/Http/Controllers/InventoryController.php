@@ -16,7 +16,7 @@ class InventoryController extends Controller
 
     public function index()
     {
-        $inventories = Inventory::where('user_id', auth()->user()->id)->latest()->paginate(10);
+        $inventories = Inventory::where('user_id', auth()->user()->id)->latest('updated_at')->paginate(10);
 
         $products = Product::where('user_id', auth()->user()->id)->latest()->get();
 
@@ -29,8 +29,8 @@ class InventoryController extends Controller
         $inventory->user_id = auth()->user()->id;
         $inventory->product_id = $request->product_id;
         $inventory->minimum_quantity = $request->minimum_quantity;
-        $inventory->available_quantity = $request->available_quantity;
-        $inventory->sold_quantity = $request->sold_quantity;
+        // $inventory->available_quantity = $request->available_quantity;
+        // $inventory->sold_quantity = $request->sold_quantity;
 
         $inventory->save();
 
@@ -49,8 +49,8 @@ class InventoryController extends Controller
         $inventory->user_id = auth()->user()->id;
         $inventory->product_id = $request->product_id;
         $inventory->minimum_quantity = $request->minimum_quantity;
-        $inventory->available_quantity = $request->available_quantity;
-        $inventory->sold_quantity = $request->sold_quantity;
+        // $inventory->available_quantity = $request->available_quantity;
+        // $inventory->sold_quantity = $request->sold_quantity;
 
         $inventory->save();
 

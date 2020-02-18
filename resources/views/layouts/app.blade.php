@@ -79,17 +79,17 @@
         <div class="row pt-5">
             @include('layouts.sidebar')
 
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-4 border-bottom">
+            <main class="col-md-10 ml-sm-auto col-sm-9 px-4 main d-print-block">
                 @yield('content')
             </main>
         </div>
 
-        <div class="text-right">
+        <div class="text-right border-top signature d-print-none">
             <span>Por <a href="http://www.diegovernan.com.br" target="_blank" class="text-primary">Diego Vernan</a></span>
         </div>
         @else
         <div class="pt-5">
-            <main class="pt-5">
+            <main class="pt-5 home">
                 @yield('content')
             </main>
         </div>

@@ -2,13 +2,13 @@
 
 @section('content')
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 top-home d-print-none">
     <h6>Olá, {{ $user->name }}!</h6>
 
-    <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
+    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="document.title='relatorio_grafico';window.print()">Exportar</button>
 </div>
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 d-print-none">
     <div class="col-md-3">
         <div class="card text-white mb-3">
             <div class="card-header d-flex justify-content-between bg-dark">
@@ -58,11 +58,11 @@
     </div>
 </div>
 
-<div class="py-3">
+<div class="py-3 d-print-block">
     <canvas class="my-4 w-100" id="myChart" height="380em"></canvas>
 </div>
 
-<div class="table-responsive py-3">
+<div class="table-responsive py-3 d-print-block">
     <table class="table table-striped table-sm">
         <thead>
             <tr>

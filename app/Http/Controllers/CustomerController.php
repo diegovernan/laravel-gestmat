@@ -52,8 +52,12 @@ class CustomerController extends Controller
 
     public function destroy(Customer $customer)
     {
-        $customer->delete();
+        try {
+            $customer->delete();
 
-        return redirect()->back()->with('success', 'Cliente excluído com sucesso!');
+            return redirect()->back()->with('success', 'Cliente excluído com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors('O cliente não pode ser excluído porque está sendo utilizado em outro local.');
+        }
     }
 }

@@ -60,8 +60,12 @@ class ProductController extends Controller
 
     public function destroy(Product $product)
     {
-        $product->delete();
+        try {
+            $product->delete();
 
-        return redirect()->back()->with('success', 'Produto excluído com sucesso!');
+            return redirect()->back()->with('success', 'Produto excluído com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors('O produto não pode ser excluído porque está sendo utilizado em outro local.');
+        }
     }
 }

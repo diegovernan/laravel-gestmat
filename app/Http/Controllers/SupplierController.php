@@ -52,8 +52,12 @@ class SupplierController extends Controller
 
     public function destroy(Supplier $supplier)
     {
-        $supplier->delete();
+        try {
+            $supplier->delete();
 
-        return redirect()->back()->with('success', 'Fornecedor excluído com sucesso!');
+            return redirect()->back()->with('success', 'Fornecedor excluído com sucesso!');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors('O fornecedor não pode ser excluído porque está sendo utilizado em outro local.');
+        }
     }
 }

@@ -26,7 +26,7 @@
                 <td class="{{ $inventory->available_quantity > $inventory->minimum_quantity ? 'text-success' : 'text-danger' }}">{{ $inventory->available_quantity }}</td>
                 <td>{{ $inventory->sold_quantity }}</td>
                 <td>
-                    <a href="{{ route('inventory.edit', $inventory->id) }}" type="button" class="text-dark"><span data-feather="edit"></span></a>
+                    <a href="{{ route('inventory.edit', $inventory->id) }}" type="button" class="btn btn-outline-dark btn-sm"><span data-feather="edit"></span></a>
                 </td>
             </tr>
             @empty

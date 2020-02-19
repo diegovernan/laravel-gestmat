@@ -70,10 +70,10 @@
                     <form method="post" action="{{ route('supplierorder.update', $supplierorder->id) }}">
                         @csrf
                         @method('PATCH')
-                        <button type="submit" class="btn btn-link btn-sm text-danger"><span data-feather="x-square"></span></button>
+                        <button type="submit" class="btn btn-outline-danger btn-sm"><span data-feather="x-square"></span></button>
                     </form>
                     @else
-                    <button class="btn btn-link btn-sm text-success"><span data-feather="check-circle"></span></button>
+                    <button class="btn btn-outline-success btn-sm"><span data-feather="check-circle"></span></button>
                     @endif
                 </td>
             </tr>

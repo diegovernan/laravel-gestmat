@@ -36,8 +36,7 @@ class SupplierOrderController extends Controller
         $supplierorder->product_id = $request->product_id;
         $supplierorder->supplier_id = $request->supplier_id;
         $supplierorder->quantity = $request->quantity;
-        $supplierorder->order_at = $request->order_at;
-
+        
         $supplierorder->save();
 
         Mail::to($supplierorder->supplier->email)->send(new SupplierOrderMail($supplierorder));

@@ -24,7 +24,7 @@
             <select id="inputProd" class="form-control" name="product_id">
                 <option value="none" selected disabled hidden>Selecionar...</option>
                 @foreach ($inventory_products as $item)
-                <option value="{{ $item->id }}" {{ old('product_id') == $item->product->id ? 'selected' : '' }}>{{ $item->product->name }}</option>
+                <option value="{{ $item->product->id }}" {{ old('product_id') == $item->product->id ? 'selected' : '' }}>{{ $item->product->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -64,9 +64,7 @@
                 <td>{{ $supplierorder->product->name }}</td>
                 <td>{{ $supplierorder->supplier->name }}</td>
                 <td>{{ $supplierorder->quantity }}</td>
-                <td class="{{ $supplierorder->order_at >= date('Y-m-d') ? 'text-success' : 'text-danger' }}">
-                    {{ $supplierorder->order_at->format('d/m/Y') }}
-                </td>
+                <td>{{ $supplierorder->created_at->format('d/m/Y') }}</td>
                 <td>
                     <form method="post" action="{{ route('supplierorder.update', $supplierorder->id) }}">
                         @csrf

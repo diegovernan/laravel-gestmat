@@ -63,9 +63,7 @@
                 <td>{{ $customerorder->id }}</td>
                 <td>{{ $customerorder->product->name }}</td>
                 <td>{{ $customerorder->customer->name }}</td>
-                <td class="{{ $customerorder->order_at >= date('Y-m-d') ? 'text-success' : 'text-danger' }}">
-                    {{ $customerorder->order_at->format('d/m/Y') }}
-                </td>
+                <td>{{ $customerorder->created_at->format('d/m/Y') }}</td>
                 <td>{{ $customerorder->quantity }}</td>
                 <td>R$ {{ number_format($customerorder->price, 2, ',', '.') }}</td>
             </tr>

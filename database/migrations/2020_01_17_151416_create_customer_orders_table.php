@@ -18,7 +18,6 @@ class CreateCustomerOrdersTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('customer_id');
-            $table->date('order_at');
             $table->integer('quantity');
             $table->string('price');
             $table->timestamps();

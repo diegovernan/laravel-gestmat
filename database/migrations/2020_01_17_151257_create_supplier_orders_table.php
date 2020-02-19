@@ -19,7 +19,6 @@ class CreateSupplierOrdersTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('supplier_id');
             $table->integer('quantity');
-            $table->date('order_at');
             $table->boolean('arrived')->default(0);
             $table->timestamps();
 

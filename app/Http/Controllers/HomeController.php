@@ -55,8 +55,8 @@ class HomeController extends Controller
         $customerorder_values = [];
 
         foreach ($months_keys as $month) {
-            $supplierorder_values[] = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('order_at', date('Y'))->whereMonth('order_at', $month)->sum('quantity');
-            $customerorder_values[] = CustomerOrder::where('user_id', auth()->user()->id)->whereYear('order_at', date('Y'))->whereMonth('order_at', $month)->sum('quantity');
+            $supplierorder_values[] = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->whereMonth('created_at', $month)->sum('quantity');
+            $customerorder_values[] = CustomerOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->whereMonth('created_at', $month)->sum('quantity');
         }
 
         $supplierorder_values = array_values($supplierorder_values);

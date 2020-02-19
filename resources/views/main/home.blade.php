@@ -10,6 +10,18 @@
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 d-print-none">
     <div class="col-md-3">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-header d-flex justify-content-between bg-dark">
+                Estoque
+                <span data-feather="archive"></span>
+            </div>
+            <div class="card-body text-center bg-secondary">
+                <h3 class="card-title">{{ $inventorycount }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
         <div class="card text-white mb-3">
             <div class="card-header d-flex justify-content-between bg-dark">
                 Fornecedores
@@ -29,18 +41,6 @@
             </div>
             <div class="card-body text-center bg-secondary">
                 <h3 class="card-title">{{ $productcount }}</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div class="card text-white bg-info mb-3">
-            <div class="card-header d-flex justify-content-between bg-dark">
-                Estoque
-                <span data-feather="archive"></span>
-            </div>
-            <div class="card-body text-center bg-secondary">
-                <h3 class="card-title">{{ $inventorycount }}</h3>
             </div>
         </div>
     </div>
@@ -68,7 +68,8 @@
             <tr>
                 <th>#</th>
                 <th>Produto</th>
-                <th>Preço</th>
+                <th>Preço de custo</th>
+                <th>Preço de venda</th>
                 <th>Estoque</th>
                 <th>Vendidos</th>
             </tr>
@@ -79,13 +80,14 @@
             <tr>
                 <td>{{ $inventory->id }}</td>
                 <td>{{ $inventory->product->name }}</td>
-                <td>R$ {{ $inventory->product->price }}</td>
+                <td>R$ {{ $inventory->product->cost_price }}</td>
+                <td>R$ {{ $inventory->product->sale_price }}</td>
                 <td>{{ $inventory->available_quantity }}</td>
                 <td>{{ $inventory->sold_quantity }}</td>
             </tr>
             @empty
             <tr>
-                <td colspan="5" class="text-center">Nenhum produto encontrado...</td>
+                <td colspan="6" class="text-center">Nenhum produto encontrado...</td>
             </tr>
             @endforelse
         </tbody>

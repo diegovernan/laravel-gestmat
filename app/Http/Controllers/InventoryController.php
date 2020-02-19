@@ -23,20 +23,6 @@ class InventoryController extends Controller
         return view('main.inventory', compact('inventories', 'products'));
     }
 
-    // public function store(InventoryRequest $request)
-    // {
-    //     $inventory = new Inventory();
-    //     $inventory->user_id = auth()->user()->id;
-    //     $inventory->product_id = $request->product_id;
-    //     $inventory->minimum_quantity = $request->minimum_quantity;
-    //     // $inventory->available_quantity = $request->available_quantity;
-    //     // $inventory->sold_quantity = $request->sold_quantity;
-
-    //     $inventory->save();
-
-    //     return redirect()->back()->with('success', 'Item adicionado ao estoque com sucesso!');
-    // }
-
     public function edit(Inventory $inventory)
     {
         $products = Product::where('user_id', auth()->user()->id)->latest()->get();

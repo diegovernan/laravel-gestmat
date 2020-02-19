@@ -38,7 +38,8 @@
 <div class="pb-5">
     <p>ID: {{ $product->id }}</p>
     <p>Nome: {{ $product->name }}</p>
-    <p>Preço: R$ {{ number_format($product->price, 2, ',', '.') }}</p>
+    <p>Preço de custo: R$ {{ number_format($product->cost_price, 2, ',', '.') }}</p>
+    <p>Preço de venda: R$ {{ number_format($product->sale_price, 2, ',', '.') }}</p>
 
     <a href="{{ route('products') }}" type="button" class="btn btn-dark">Voltar</a>
 </div>

@@ -13,7 +13,7 @@
                 <th>Quantidade mínima</th>
                 <th>Quantidade disponível</th>
                 <th>Quantidade vendida</th>
-                <th>Ações</th>
+                <th>Editar</th>
             </tr>
         </thead>
 
@@ -26,15 +26,7 @@
                 <td class="{{ $inventory->available_quantity > $inventory->minimum_quantity ? 'text-success' : 'text-danger' }}">{{ $inventory->available_quantity }}</td>
                 <td>{{ $inventory->sold_quantity }}</td>
                 <td>
-                    <div class="d-flex">
-                        <a href="{{ route('inventory.edit', $inventory->id) }}" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>
-
-                        <form method="post" action="{{ route('inventory.destroy', $inventory->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-outline-dark btn-sm" onclick="return confirm('Tem certeza que deseja excluir este item?')"><span data-feather="trash-2"></span></button>
-                        </form>
-                    </div>
+                    <a href="{{ route('inventory.edit', $inventory->id) }}" type="button" class="text-dark"><span data-feather="edit"></span></a>
                 </td>
             </tr>
             @empty

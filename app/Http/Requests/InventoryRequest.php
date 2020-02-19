@@ -14,8 +14,7 @@ class InventoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_id' => 'required',
-            // 'minimum_quantity' => 'required|numeric|max:1000',
+            'minimum_quantity' => 'required|numeric|max:1000',
             // 'available_quantity' => 'required|numeric|max:1000',
             // 'sold_quantity' => 'required|numeric|max:1000'
         ];
@@ -24,7 +23,6 @@ class InventoryRequest extends FormRequest
     public function messages()
     {
         return [
-            'product_id.required' => 'O produto é obrigatório.',
             'minimum_quantity.required' => 'A quantidade mínima de produto é obrigatória.',
             'minimum_quantity.numeric' => 'A quantidade mínima de produto é não é válida.',
             'minimum_quantity.max' => 'A quantidade mínima de produto precisa ter no máximo 1000.',

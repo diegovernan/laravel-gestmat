@@ -38,7 +38,7 @@ class ProductController extends Controller
 
         $inventory->save();
 
-        return redirect()->back()->with('success', 'Produto cadastrado com sucesso!');
+        return redirect()->back()->with('success', 'Produto cadastrado e adicionado ao estoque com sucesso!');
     }
 
     public function edit(Product $product)

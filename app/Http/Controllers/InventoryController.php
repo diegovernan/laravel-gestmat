@@ -33,7 +33,6 @@ class InventoryController extends Controller
     public function update(InventoryRequest $request, Inventory $inventory)
     {
         $inventory->user_id = auth()->user()->id;
-        $inventory->product_id = $request->product_id;
         $inventory->minimum_quantity = $request->minimum_quantity;
         // $inventory->available_quantity = $request->available_quantity;
         // $inventory->sold_quantity = $request->sold_quantity;

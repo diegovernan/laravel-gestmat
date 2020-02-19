@@ -11,16 +11,6 @@
         @csrf
         @method('PATCH')
         <div class="form-group">
-            <label for="inputProd">Produto</label>
-            <select id="inputProd" class="form-control" name="product_id">
-                <option value="none" selected disabled hidden>Selecionar...</option>
-                @foreach ($products as $product)
-                <option value="{{ $product->id }}" {{ $product->id == $inventory->product_id ? 'selected' : '' }}>{{ $product->name }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="form-group">
             <label for="Input1">Quantidade mínima</label>
             <input type="number" class="form-control" id="Input1" name="minimum_quantity" value="{{ old('minimum_quantity') ?? $inventory->minimum_quantity }}">
         </div>

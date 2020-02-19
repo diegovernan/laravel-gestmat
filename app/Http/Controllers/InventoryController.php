@@ -20,7 +20,7 @@ class InventoryController extends Controller
 
         $products = Product::where('user_id', auth()->user()->id)->latest()->get();
 
-        return view('register.inventory', compact('inventories', 'products'));
+        return view('main.inventory', compact('inventories', 'products'));
     }
 
     public function store(InventoryRequest $request)
@@ -41,7 +41,7 @@ class InventoryController extends Controller
     {
         $products = Product::where('user_id', auth()->user()->id)->latest()->get();
 
-        return view('register.inventory-edit', compact('inventory', 'products'));
+        return view('main.inventory-edit', compact('inventory', 'products'));
     }
 
     public function update(InventoryRequest $request, Inventory $inventory)

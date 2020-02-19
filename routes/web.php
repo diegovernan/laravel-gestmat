@@ -14,6 +14,12 @@ Route::patch('/supplierorders/{supplierorder}', 'SupplierOrderController@update'
 Route::get('/customerorders', 'CustomerOrderController@index')->name('customerorders');
 Route::post('/customerorders', 'CustomerOrderController@store')->name('customerorders.store');
 
+Route::get('/inventory', 'InventoryController@index')->name('inventory');
+Route::post('/inventory', 'InventoryController@store')->name('inventory.store');
+Route::get('/inventory/{inventory}/edit', 'InventoryController@edit')->name('inventory.edit');
+Route::patch('/inventory/{inventory}', 'InventoryController@update')->name('inventory.update');
+Route::delete('/inventory/{inventory}', 'InventoryController@destroy')->name('inventory.destroy');
+
 Route::get('/reports', 'ReportController@index')->name('reports');
 
 // Cadastro
@@ -28,12 +34,6 @@ Route::post('/products', 'ProductController@store')->name('products.store');
 Route::get('/product/{product}/edit', 'ProductController@edit')->name('product.edit');
 Route::patch('/product/{product}', 'ProductController@update')->name('product.update');
 Route::delete('/product/{product}', 'ProductController@destroy')->name('product.destroy');
-
-Route::get('/inventory', 'InventoryController@index')->name('inventory');
-Route::post('/inventory', 'InventoryController@store')->name('inventory.store');
-Route::get('/inventory/{inventory}/edit', 'InventoryController@edit')->name('inventory.edit');
-Route::patch('/inventory/{inventory}', 'InventoryController@update')->name('inventory.update');
-Route::delete('/inventory/{inventory}', 'InventoryController@destroy')->name('inventory.destroy');
 
 Route::get('/customers', 'CustomerController@index')->name('customers');
 Route::post('/customers', 'CustomerController@store')->name('customers.store');

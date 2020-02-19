@@ -22,11 +22,11 @@ class SupplierOrderController extends Controller
     {
         $supplierorders = SupplierOrder::where('user_id', auth()->user()->id)->latest()->paginate(10);
 
-        $products = Product::where('user_id', auth()->user()->id)->latest()->get();
+        $inventory_products = Inventory::where('user_id', auth()->user()->id)->latest()->get();
 
         $suppliers = Supplier::where('user_id', auth()->user()->id)->latest()->get();
 
-        return view('main.supplierorders', compact('supplierorders', 'products', 'suppliers'));
+        return view('main.supplierorders', compact('supplierorders', 'inventory_products', 'suppliers'));
     }
 
     public function store(SupplierOrderRequest $request)

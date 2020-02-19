@@ -10,16 +10,6 @@
     <form method="post" action="{{ route('customerorders.store') }}">
         @csrf
         <div class="form-group">
-            <label for="inputProd">Produto</label>
-            <select id="inputProd" class="form-control" name="product_id">
-                <option value="none" selected disabled hidden>Selecionar...</option>
-                @foreach ($inventory_products as $item)
-                <option value="{{ $item->product->id }}" {{ old('product_id') == $item->product->id ? 'selected' : '' }}>{{ $item->product->name }}</option>
-                @endforeach
-            </select>
-        </div>
-
-        <div class="form-group">
             <label for="inputCust">Cliente</label>
             <select id="inputCust" class="form-control" name="customer_id">
                 <option value="none" selected disabled hidden>Selecionar...</option>
@@ -30,13 +20,18 @@
         </div>
 
         <div class="form-group">
-            <label for="Input1">Quantidade vendida</label>
-            <input type="number" class="form-control" id="Input1" name="quantity" value="{{ old('quantity') }}">
+            <label for="inputProd">Produto</label>
+            <select id="inputProd" class="form-control" name="product_id">
+                <option value="none" selected disabled hidden>Selecionar...</option>
+                @foreach ($inventory_products as $item)
+                <option value="{{ $item->product->id }}" {{ old('product_id') == $item->product->id ? 'selected' : '' }}>{{ $item->product->name }}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">
-            <label for="Input2">Data da venda</label>
-            <input type="date" class="form-control" id="Input2" name="order_at" value="{{ old('order_at') }}">
+            <label for="Input1">Quantidade</label>
+            <input type="number" class="form-control" id="Input1" name="quantity" value="{{ old('quantity') }}">
         </div>
 
         <div class="text-center">

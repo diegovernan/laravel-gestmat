@@ -16,8 +16,7 @@ class SupplierOrderRequest extends FormRequest
         return [
             'product_id' => 'required',
             'supplier_id' => 'required',
-            'quantity' => 'required|numeric|max:1000',
-            'order_at' => 'required|date'
+            'quantity' => 'required|numeric|max:1000'
         ];
     }
 
@@ -28,9 +27,7 @@ class SupplierOrderRequest extends FormRequest
             'supplier_id.required' => 'O fornecedor é obrigatório.',
             'quantity.required' => 'A quantidade desejada de produto é obrigatória.',
             'quantity.numeric' => 'A quantidade desejada de produto é não é válida.',
-            'quantity.max' => 'A quantidade desejada de produto precisa ter no máximo 1000.',
-            'order_at.required' => 'A data de entrega é obrigatória.',
-            'order_at.date' => 'A data de entrega não é válida.'
+            'quantity.max' => 'A quantidade desejada de produto precisa ter no máximo 1000.'
         ];
     }
 }

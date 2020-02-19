@@ -36,12 +36,18 @@ class CustomerOrderController extends Controller
         $customerorder->quantity = $request->quantity;
         $customerorder->price = $request->quantity * $customerorder->product->sale_price;
 
-        $customerorder->save();
+        $available_quantity = Inventory::where('user_id', auth()->user()->id)->where('product_id', $customerorder->product_id)->where('available_quantity', '>=', $customerorder->quantity)->first();
 
-        Inventory::where('product_id', $customerorder->product_id)->increment('sold_quantity', $customerorder->quantity);
+        if ($available_quantity == true) {
+            $customerorder->save();
 
-        Inventory::where('product_id', $customerorder->product_id)->decrement('available_quantity', $customerorder->quantity);
+            Inventory::where('user_id', auth()->user()->id)->where('product_id', $customerorder->product_id)->increment('sold_quantity', $customerorder->quantity);
 
-        return redirect()->back()->with('success', 'Venda realizada com sucesso!');
+            Inventory::where('user_id', auth()->user()->id)->where('product_id', $customerorder->product_id)->decrement('available_quantity', $customerorder->quantity);
+
+            return redirect()->back()->with('success', 'Venda realizada com sucesso!');
+        } else {
+            return redirect()->back()->withErrors('A venda não pode ser concluída porque a quantidade vendida é menor que a quantidade disponível.');
+        }
     }
 }

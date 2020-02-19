@@ -36,7 +36,7 @@ class SupplierOrderController extends Controller
         $supplierorder->product_id = $request->product_id;
         $supplierorder->supplier_id = $request->supplier_id;
         $supplierorder->quantity = $request->quantity;
-        
+
         $supplierorder->save();
 
         Mail::to($supplierorder->supplier->email)->send(new SupplierOrderMail($supplierorder));
@@ -46,15 +46,9 @@ class SupplierOrderController extends Controller
 
     public function update(Request $request, SupplierOrder $supplierorder)
     {
-        if ($supplierorder->arrived == 0) {
-            Inventory::where('user_id', auth()->user()->id)->where('product_id', $supplierorder->product_id)->increment('available_quantity', $supplierorder->quantity);
+        Inventory::where('user_id', auth()->user()->id)->where('product_id', $supplierorder->product_id)->increment('available_quantity', $supplierorder->quantity);
 
-            $supplierorder->arrived = 1;
-        } else {
-            Inventory::where('user_id', auth()->user()->id)->where('product_id', $supplierorder->product_id)->decrement('available_quantity', $supplierorder->quantity);
-
-            $supplierorder->arrived = 0;
-        }
+        $supplierorder->arrived = 1;
 
         $supplierorder->save();
 

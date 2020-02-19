@@ -49,8 +49,8 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Produto</th>
                 <th>Fornecedor</th>
+                <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Entrega</th>
                 <th>Recebido</th>
@@ -61,18 +61,20 @@
             @forelse ($supplierorders as $supplierorder)
             <tr>
                 <td>{{ $supplierorder->id }}</td>
-                <td>{{ $supplierorder->product->name }}</td>
                 <td>{{ $supplierorder->supplier->name }}</td>
+                <td>{{ $supplierorder->product->name }}</td>
                 <td>{{ $supplierorder->quantity }}</td>
-                <td>{{ $supplierorder->created_at->format('d/m/Y') }}</td>
+                <td>{{ $supplierorder->updated_at->format('d/m/Y') }}</td>
                 <td>
+                    @if ( $supplierorder->arrived == 0 )
                     <form method="post" action="{{ route('supplierorder.update', $supplierorder->id) }}">
                         @csrf
                         @method('PATCH')
-                        <button type="submit" class="btn {{ $supplierorder->arrived == 1 ? 'btn-outline-success' : 'btn-outline-danger' }} btn-sm">
-                            {{ $supplierorder->arrived == 1 ? 'Sim' : 'Não' }}
-                        </button>
+                        <button type="submit" class="btn btn-link btn-sm text-danger"><span data-feather="x-square"></span></button>
                     </form>
+                    @else
+                    <button class="btn btn-link btn-sm text-success"><span data-feather="check-circle"></span></button>
+                    @endif
                 </td>
             </tr>
             @empty

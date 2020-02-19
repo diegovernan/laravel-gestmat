@@ -49,10 +49,10 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Produto</th>
                 <th>Cliente</th>
-                <th>Data</th>
+                <th>Produto</th>
                 <th>Quantidade</th>
+                <th>Saída</th>
                 <th>Preço</th>
             </tr>
         </thead>
@@ -61,10 +61,10 @@
             @forelse ($customerorders as $customerorder)
             <tr>
                 <td>{{ $customerorder->id }}</td>
-                <td>{{ $customerorder->product->name }}</td>
                 <td>{{ $customerorder->customer->name }}</td>
-                <td>{{ $customerorder->created_at->format('d/m/Y') }}</td>
+                <td>{{ $customerorder->product->name }}</td>
                 <td>{{ $customerorder->quantity }}</td>
+                <td>{{ $customerorder->created_at->format('d/m/Y') }}</td>
                 <td>R$ {{ number_format($customerorder->price, 2, ',', '.') }}</td>
             </tr>
             @empty

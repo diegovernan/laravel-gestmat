@@ -17,7 +17,7 @@ class CreateInventoriesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
-            $table->integer('minimum_quantity');
+            $table->integer('minimum_quantity')->default(0);
             $table->integer('available_quantity')->default(0);
             $table->integer('sold_quantity')->default(0);
             $table->timestamps();

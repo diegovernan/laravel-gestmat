@@ -15,7 +15,7 @@ class InventoryRequest extends FormRequest
     {
         return [
             'product_id' => 'required',
-            'minimum_quantity' => 'required|numeric|max:1000',
+            // 'minimum_quantity' => 'required|numeric|max:1000',
             // 'available_quantity' => 'required|numeric|max:1000',
             // 'sold_quantity' => 'required|numeric|max:1000'
         ];

@@ -16,8 +16,13 @@
         </div>
 
         <div class="form-group">
-            <label for="Input2">Preço</label>
-            <input type="text" class="form-control money" id="Input2" name="price" value="{{ old('price') ?? $product->price }}">
+            <label for="Input2">Preço de custo</label>
+            <input type="text" class="form-control money" id="Input2" name="cost_price" value="{{ old('cost_price') ?? $product->cost_price }}">
+        </div>
+
+        <div class="form-group">
+            <label for="Input3">Preço de venda</label>
+            <input type="text" class="form-control money" id="Input3" name="sale_price" value="{{ old('sale_price') ?? $product->sale_price }}">
         </div>
 
         <div class="text-center">

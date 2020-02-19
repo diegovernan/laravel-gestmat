@@ -25,7 +25,8 @@ class ProductController extends Controller
         $product = new Product();
         $product->user_id = auth()->user()->id;
         $product->name = $request->name;
-        $product->price = str_replace(",", ".", $request->price);
+        $product->cost_price = str_replace(",", ".", $request->cost_price);
+        $product->sale_price = str_replace(",", ".", $request->sale_price);
 
         $product->save();
 
@@ -41,7 +42,8 @@ class ProductController extends Controller
     {
         $product->user_id = auth()->user()->id;
         $product->name = $request->name;
-        $product->price = str_replace(",", ".", $request->price);
+        $product->cost_price = str_replace(",", ".", $request->cost_price);
+        $product->sale_price = str_replace(",", ".", $request->sale_price);
 
         $product->save();
 

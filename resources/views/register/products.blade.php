@@ -15,8 +15,13 @@
         </div>
 
         <div class="form-group">
-            <label for="Input2">Preço</label>
-            <input type="text" class="form-control money" id="Input2" name="price" value="{{ old('price') }}">
+            <label for="Input2">Preço de custo</label>
+            <input type="text" class="form-control money" id="Input2" name="cost_price" value="{{ old('cost_price') }}">
+        </div>
+
+        <div class="form-group">
+            <label for="Input3">Preço de venda</label>
+            <input type="text" class="form-control money" id="Input3" name="sale_price" value="{{ old('sale_price') }}">
         </div>
 
         <div class="text-center">
@@ -35,7 +40,8 @@
             <tr>
                 <th>#</th>
                 <th>Nome</th>
-                <th>Preço</th>
+                <th>Preço de custo</th>
+                <th>Preço de venda</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -45,7 +51,8 @@
             <tr>
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->name }}</td>
-                <td>R$ {{ number_format($product->price, 2, ',', '.') }}</td>
+                <td>R$ {{ number_format($product->cost_price, 2, ',', '.') }}</td>
+                <td>R$ {{ number_format($product->sale_price, 2, ',', '.') }}</td>
                 <td>
                     <div class="d-flex">
                         <a href="{{ route('product.edit', $product->id) }}" type="button" class="btn btn-outline-dark btn-sm mr-1"><span data-feather="edit"></span></a>
@@ -60,7 +67,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="4" class="text-center">Nenhum produto encontrado...</td>
+                <td colspan="5" class="text-center">Nenhum produto encontrado...</td>
             </tr>
             @endforelse
         </tbody>

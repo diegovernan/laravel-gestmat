@@ -15,7 +15,8 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:2|max:20',
-            'price' => 'required|string|min:4|max:8'
+            'cost_price' => 'required|string|min:4|max:8',
+            'sale_price' => 'required|string|min:4|max:8'
         ];
     }
 
@@ -26,10 +27,14 @@ class ProductRequest extends FormRequest
             'name.string' => 'O nome de produto não é válido.',
             'name.min' => 'O nome de produto precisa ter no mínimo 2 caracteres.',
             'name.max' => 'O nome de produto precisa ter no máximo 20 caracteres.',
-            'price.required' => 'O preço de produto é obrigatório.',
-            'price.string' => 'O preço de produto não é válido.',
-            'price.min' => 'O preço de produto precisa ter no mínimo 4 caracteres.',
-            'price.max' => 'O preço de produto precisa ter no máximo 8 caracteres.',
+            'cost_price.required' => 'O preço custo de produto é obrigatório.',
+            'cost_price.string' => 'O preço custo de produto não é válido.',
+            'cost_price.min' => 'O preço custo de produto precisa ter no mínimo 4 caracteres.',
+            'cost_price.max' => 'O preço custo de produto precisa ter no máximo 8 caracteres.',
+            'sale_price.required' => 'O preço venda de produto é obrigatório.',
+            'sale_price.string' => 'O preço venda de produto não é válido.',
+            'sale_price.min' => 'O preço venda de produto precisa ter no mínimo 4 caracteres.',
+            'sale_price.max' => 'O preço venda de produto precisa ter no máximo 8 caracteres.',
         ];
     }
 }

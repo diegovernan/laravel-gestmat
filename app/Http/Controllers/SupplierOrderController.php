@@ -36,6 +36,7 @@ class SupplierOrderController extends Controller
         $supplierorder->product_id = $request->product_id;
         $supplierorder->supplier_id = $request->supplier_id;
         $supplierorder->quantity = $request->quantity;
+        $supplierorder->price = $request->quantity * $supplierorder->product->cost_price;
 
         $supplierorder->save();
 

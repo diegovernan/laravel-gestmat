@@ -53,6 +53,7 @@
                 <th>Produto</th>
                 <th>Quantidade</th>
                 <th>Entrega</th>
+                <th>Custo</th>
                 <th>Recebido</th>
             </tr>
         </thead>
@@ -65,6 +66,7 @@
                 <td>{{ $supplierorder->product->name }}</td>
                 <td>{{ $supplierorder->quantity }}</td>
                 <td>{{ $supplierorder->updated_at->format('d/m/Y') }}</td>
+                <td>R$ {{ number_format($supplierorder->price, 2, ',', '.') }}</td>
                 <td>
                     @if ( $supplierorder->arrived == 0 )
                     <form method="post" action="{{ route('supplierorder.update', $supplierorder->id) }}">
@@ -79,7 +81,7 @@
             </tr>
             @empty
             <tr>
-                <td colspan="6" class="text-center">Nenhuma solicitação encontrada...</td>
+                <td colspan="7" class="text-center">Nenhuma solicitação encontrada...</td>
             </tr>
             @endforelse
         </tbody>

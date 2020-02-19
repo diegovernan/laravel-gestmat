@@ -28,7 +28,7 @@ class HomeController extends Controller
 
         $productcount = Product::where('user_id', auth()->user()->id)->get()->count();
 
-        $inventorycount = Inventory::where('user_id', auth()->user()->id)->get()->count();
+        $inventorycount = Inventory::where('user_id', auth()->user()->id)->sum('available_quantity');
 
         $customercount = Customer::where('user_id', auth()->user()->id)->get()->count();
 
@@ -55,7 +55,7 @@ class HomeController extends Controller
         $customerorder_values = [];
 
         foreach ($months_keys as $month) {
-            $supplierorder_values[] = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->whereMonth('created_at', $month)->sum('quantity');
+            $supplierorder_values[] = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->whereMonth('created_at', $month)->where('arrived', 1)->sum('quantity');
             $customerorder_values[] = CustomerOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->whereMonth('created_at', $month)->sum('quantity');
         }
 

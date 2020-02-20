@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\CustomerOrder;
 use App\Inventory;
 use App\Report;
+use App\SupplierOrder;
+use App\CustomerOrder;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -13,8 +14,12 @@ class ReportController extends Controller
     {
         $inventories = Inventory::where('user_id', auth()->user()->id)->latest('updated_at')->get();
 
-        $total_price = CustomerOrder::where('user_id', auth()->user()->id)->sum('price');
+        $income = SupplierOrder::where('user_id', auth()->user()->id)->sum('price');
 
-        return view('main.reports', compact('inventories', 'total_price'));
+        $expense = CustomerOrder::where('user_id', auth()->user()->id)->sum('price');
+
+        $difference = $expense - $income;
+
+        return view('main.reports', compact('inventories', 'income', 'expense', 'difference'));
     }
 }

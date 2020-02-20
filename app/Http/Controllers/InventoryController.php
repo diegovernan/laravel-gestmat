@@ -34,18 +34,9 @@ class InventoryController extends Controller
     {
         $inventory->user_id = auth()->user()->id;
         $inventory->minimum_quantity = $request->minimum_quantity;
-        // $inventory->available_quantity = $request->available_quantity;
-        // $inventory->sold_quantity = $request->sold_quantity;
 
         $inventory->save();
 
         return redirect()->back()->with('success', 'Estoque atualizado com sucesso!');
-    }
-
-    public function destroy(Inventory $inventory)
-    {
-        $inventory->delete();
-
-        return redirect()->back()->with('success', 'Item excluído do estoque com sucesso!');
     }
 }

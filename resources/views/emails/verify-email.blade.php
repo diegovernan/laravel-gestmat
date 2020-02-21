@@ -9,9 +9,8 @@
 Confirmar e-mail
 @endcomponent
 
-Caso você não tenha criado uma conta, basta ignorar este esta mensagem.
+<p>Caso você não tenha criado uma conta, basta ignorar este esta mensagem.</p>
 
-Atenciosamente,<br>
 {{ config('app.name') }}
 
 @endcomponent

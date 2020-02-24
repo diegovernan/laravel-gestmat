@@ -10,7 +10,7 @@
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 d-print-none">
     <div class="col-md-3">
-        <div class="card text-white bg-info mb-3">
+        <div class="card text-white mb-2">
             <div class="card-header d-flex justify-content-between bg-dark">
                 Estoque
                 <span data-feather="archive"></span>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="col-md-3">
-        <div class="card text-white mb-3">
+        <div class="card text-white mb-2">
             <div class="card-header d-flex justify-content-between bg-dark">
                 Fornecedores
                 <span data-feather="truck"></span>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="col-md-3">
-        <div class="card text-white bg-info mb-3">
+        <div class="card text-white mb-2">
             <div class="card-header d-flex justify-content-between bg-dark">
                 Produtos
                 <span data-feather="package"></span>
@@ -46,7 +46,7 @@
     </div>
 
     <div class="col-md-3">
-        <div class="card text-white bg-info mb-3">
+        <div class="card text-white mb-2">
             <div class="card-header d-flex justify-content-between bg-dark">
                 Clientes
                 <span data-feather="users"></span>
@@ -58,19 +58,20 @@
     </div>
 </div>
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 d-print-block">
-    <div class="col-md-6">
-        <canvas class="my-4 w-100" id="myChart1"></canvas>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
+    <div class="col-md-6 mb-2">
+        <canvas class="w-100" id="myChart1"></canvas>
     </div>
 
-    <div class="col-md-3">
-        <canvas class="my-4 w-100" id="myChart2"></canvas>
+    <div class="col-md-3 mb-2">
+        <canvas class="w-100" id="myChart2"></canvas>
     </div>
 
-    <div class="col-md-3">
-        <canvas class="my-4 w-100" id="myChart3"></canvas>
+    <div class="col-md-3 mb-2">
+        <canvas class="w-100" id="myChart3"></canvas>
     </div>
 </div>
+
 <!-- <div class="py-3 d-print-block">
     <canvas class="my-4 w-100" id="myChart" height="380em"></canvas>
 </div> -->
@@ -151,24 +152,14 @@
     var myChart2 = new Chart(ctx2, {
         type: 'pie',
         data: {
-            labels: ['1', '2'],
+            labels: ['Despesa', 'Receita'],
             datasets: [{
-                    data: <?= json_encode($supplierorder_values); ?>,
-                    label: 'Pedidos',
-                    lineTension: 0,
-                    backgroundColor: '#71c7ec',
-                    borderColor: '#1e90ff',
-                    borderWidth: 1
-
-                },
-                {
-                    data: <?= json_encode($customerorder_values); ?>,
-                    label: 'Vendas',
-                    backgroundColor: '#005073',
-                    borderColor: '#1e90ff',
-                    borderWidth: 1
-                }
-            ]
+                data: [70, 30],
+                lineTension: 0,
+                backgroundColor: ['#71c7ec', '#005073'],
+                borderColor: '#1e90ff',
+                borderWidth: 1
+            }]
         },
         options: {
             responsive: true
@@ -178,26 +169,16 @@
     var ctx3 = document.getElementById('myChart3')
     // Gráfico 3
     var myChart3 = new Chart(ctx3, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: ['1', '2'],
             datasets: [{
-                    data: <?= json_encode($supplierorder_values); ?>,
-                    label: 'Pedidos',
-                    lineTension: 0,
-                    backgroundColor: '#71c7ec',
-                    borderColor: '#1e90ff',
-                    borderWidth: 1
-
-                },
-                {
-                    data: <?= json_encode($customerorder_values); ?>,
-                    label: 'Vendas',
-                    backgroundColor: '#005073',
-                    borderColor: '#1e90ff',
-                    borderWidth: 1
-                }
-            ]
+                data: [70, 30],
+                lineTension: 0,
+                backgroundColor: ['#71c7ec', '#005073'],
+                borderColor: '#1e90ff',
+                borderWidth: 1
+            }]
         },
         options: {
             responsive: true

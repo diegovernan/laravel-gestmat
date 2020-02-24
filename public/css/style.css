@@ -76,6 +76,12 @@ body {
   }
 }
 
+@media (max-width: 575px) {
+  .top-home {
+    padding-top: 55px !important;
+  }
+}
+
 /*
   * Navbar
   */

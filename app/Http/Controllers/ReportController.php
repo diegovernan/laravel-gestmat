@@ -14,9 +14,9 @@ class ReportController extends Controller
     {
         $inventories = Inventory::where('user_id', auth()->user()->id)->latest('updated_at')->get();
 
-        $income = SupplierOrder::where('user_id', auth()->user()->id)->sum('price');
+        $income = Report::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('income');
 
-        $expense = CustomerOrder::where('user_id', auth()->user()->id)->sum('price');
+        $expense = Report::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('expense');
 
         $difference = $expense - $income;
 

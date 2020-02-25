@@ -6,12 +6,16 @@
     <button type="button" class="btn btn-primary" onclick="window.print()">Imprimir</button>
 </div>
 
-<h4 class="text-center py-5">Relatório {{ date('Y') }}</h4>
+<h4 class="text-center py-3">Relatório {{ date('Y') }}</h4>
 
-<div>
-    <p>Despesa: R$ {{ number_format($income, 2, ',', '.') }}</p>
-    <p>Receita: R$ {{ number_format($expense, 2, ',', '.') }} </p>
-    <p>Resultado: R$ {{ number_format($difference, 2, ',', '.') }}</p>
+<div class="d-flex justify-content-center py-3">
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Despesa: R$ {{ number_format($income, 2, ',', '.') }}</li>
+            <li class="list-group-item">Receita: R$ {{ number_format($expense, 2, ',', '.') }}</li>
+            <li class="list-group-item">Resultado: R$ {{ number_format($difference, 2, ',', '.') }}</li>
+        </ul>
+    </div>
 </div>
 
 <div class="table-responsive py-3 d-print-block">

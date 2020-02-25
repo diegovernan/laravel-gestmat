@@ -154,7 +154,7 @@
         data: {
             labels: ['Despesa', 'Receita'],
             datasets: [{
-                data: [70, 30],
+                data: [<?= json_encode($income); ?>, <?= json_encode($expense); ?>],
                 lineTension: 0,
                 backgroundColor: ['#71c7ec', '#005073'],
                 borderColor: '#1e90ff',

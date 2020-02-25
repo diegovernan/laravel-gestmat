@@ -7,6 +7,7 @@ use App\Supplier;
 use App\Product;
 use App\Inventory;
 use App\Customer;
+use App\Report;
 use App\CustomerOrder;
 use App\SupplierOrder;
 use Illuminate\Http\Request;
@@ -62,6 +63,10 @@ class HomeController extends Controller
         $supplierorder_values = array_values($supplierorder_values);
         $customerorder_values = array_values($customerorder_values);
 
-        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'supplierorder_values', 'customerorder_values'));
+        $income = Report::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('income');
+
+        $expense = Report::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('expense');
+
+        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'supplierorder_values', 'customerorder_values', 'income', 'expense'));
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Requests\CustomerOrderRequest;
 use App\Inventory;
 use App\Customer;
 use App\Product;
+use App\Report;
 use Illuminate\Http\Request;
 
 class CustomerOrderController extends Controller
@@ -44,6 +45,11 @@ class CustomerOrderController extends Controller
             Inventory::where('user_id', auth()->user()->id)->where('product_id', $customerorder->product_id)->increment('sold_quantity', $customerorder->quantity);
 
             Inventory::where('user_id', auth()->user()->id)->where('product_id', $customerorder->product_id)->decrement('available_quantity', $customerorder->quantity);
+
+            $report = new Report;
+            $report->user_id = auth()->user()->id;
+            $report->expense += $customerorder->price;
+            $report->save();
 
             return redirect()->back()->with('success', 'Venda realizada com sucesso!');
         } else {

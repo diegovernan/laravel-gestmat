@@ -15,9 +15,12 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('income');
-            $table->string('expense');
+            $table->unsignedBigInteger('user_id');
+            $table->string('income')->default('0');
+            $table->string('expense')->default('0');;
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

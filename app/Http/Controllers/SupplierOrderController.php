@@ -8,6 +8,7 @@ use App\Inventory;
 use App\Supplier;
 use App\Product;
 use App\Mail\SupplierOrderMail;
+use App\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -47,11 +48,16 @@ class SupplierOrderController extends Controller
 
     public function update(Request $request, SupplierOrder $supplierorder)
     {
-        Inventory::where('user_id', auth()->user()->id)->where('product_id', $supplierorder->product_id)->increment('available_quantity', $supplierorder->quantity);
-
         $supplierorder->arrived = 1;
 
         $supplierorder->save();
+
+        Inventory::where('user_id', auth()->user()->id)->where('product_id', $supplierorder->product_id)->increment('available_quantity', $supplierorder->quantity);
+
+        $report = new Report;
+        $report->user_id = auth()->user()->id;
+        $report->income += $supplierorder->price;
+        $report->save();
 
         return redirect()->back()->with('success', 'Solicitação atualizada com sucesso!');
     }

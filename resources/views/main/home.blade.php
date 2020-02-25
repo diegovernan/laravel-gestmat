@@ -171,9 +171,9 @@
     var myChart3 = new Chart(ctx3, {
         type: 'doughnut',
         data: {
-            labels: ['1', '2'],
+            labels: ['Solicitado', 'Recebido'],
             datasets: [{
-                data: [70, 30],
+                data: [<?= json_encode($all_orders); ?>, <?= json_encode($arrived_orders); ?>],
                 lineTension: 0,
                 backgroundColor: ['#71c7ec', '#005073'],
                 borderColor: '#1e90ff',

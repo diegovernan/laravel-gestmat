@@ -67,6 +67,10 @@ class HomeController extends Controller
 
         $expense = Report::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('expense');
 
-        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'supplierorder_values', 'customerorder_values', 'income', 'expense'));
+        $all_orders = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('arrived');
+
+        $arrived_orders = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->where('arrived', 1)->sum('arrived');
+
+        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'supplierorder_values', 'customerorder_values', 'income', 'expense', 'all_orders', 'arrived_orders'));
     }
 }

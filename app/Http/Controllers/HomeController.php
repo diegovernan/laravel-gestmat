@@ -64,7 +64,7 @@ class HomeController extends Controller
         $customerorder_values = array_values($customerorder_values);
 
         // Gráfico 2
-        $all_orders = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('arrived');
+        $all_orders = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->count();
 
         $arrived_orders = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->where('arrived', 1)->sum('arrived');
 

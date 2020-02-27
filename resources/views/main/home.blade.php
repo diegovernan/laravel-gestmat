@@ -9,19 +9,7 @@
 </div>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 d-print-none">
-    <div class="col-md-3">
-        <div class="card text-white mb-2">
-            <div class="card-header d-flex justify-content-between bg-dark">
-                Estoque
-                <span data-feather="archive"></span>
-            </div>
-            <div class="card-body text-center bg-secondary">
-                <h3 class="card-title">{{ $inventorycount }}</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card text-white mb-2">
             <div class="card-header d-flex justify-content-between bg-dark">
                 Fornecedores
@@ -33,7 +21,7 @@
         </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card text-white mb-2">
             <div class="card-header d-flex justify-content-between bg-dark">
                 Produtos
@@ -45,7 +33,7 @@
         </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
         <div class="card text-white mb-2">
             <div class="card-header d-flex justify-content-between bg-dark">
                 Clientes
@@ -59,15 +47,15 @@
 </div>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3">
-    <div class="col-md-6 mb-2">
+    <div class="col-md-4 mb-2">
         <canvas class="w-100" id="myChart1"></canvas>
     </div>
 
-    <div class="col-md-3 mb-2">
+    <div class="col-md-4 mb-2">
         <canvas class="w-100" id="myChart2"></canvas>
     </div>
 
-    <div class="col-md-3 mb-2">
+    <div class="col-md-4 mb-2">
         <canvas class="w-100" id="myChart3"></canvas>
     </div>
 </div>
@@ -121,67 +109,83 @@
     var ctx1 = document.getElementById('myChart1')
     // Gráfico 1
     var myChart1 = new Chart(ctx1, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: <?= json_encode($months_values); ?>,
             datasets: [{
                     data: <?= json_encode($supplierorder_values); ?>,
                     label: 'Pedidos',
-                    lineTension: 0,
                     backgroundColor: '#71c7ec',
-                    borderColor: '#1e90ff',
-                    borderWidth: 1
+                    borderColor: '#71c7ec',
+                    fill: false
 
                 },
                 {
                     data: <?= json_encode($customerorder_values); ?>,
                     label: 'Vendas',
                     backgroundColor: '#005073',
-                    borderColor: '#1e90ff',
-                    borderWidth: 1
+                    borderColor: '#005073',
+                    fill: false
                 }
             ]
         },
         options: {
-            responsive: true
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
         }
     });
 
     var ctx2 = document.getElementById('myChart2')
     // Gráfico 2
     var myChart2 = new Chart(ctx2, {
-        type: 'doughnut',
+        type: 'bar',
         data: {
             labels: ['Solicitado', 'Recebido'],
             datasets: [{
                 data: [<?= json_encode($all_orders); ?>, <?= json_encode($arrived_orders); ?>],
-                lineTension: 0,
-                backgroundColor: ['#71c7ec', '#005073'],
-                borderColor: '#1e90ff',
-                borderWidth: 1
+                label: 'Estoque',
+                backgroundColor: ['#71c7ec', '#005073']
             }]
         },
         options: {
-            responsive: true
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
         }
     });
 
     var ctx3 = document.getElementById('myChart3')
     // Gráfico 3
     var myChart3 = new Chart(ctx3, {
-        type: 'pie',
+        type: 'bar',
         data: {
             labels: ['Despesa', 'Receita'],
             datasets: [{
                 data: [<?= json_encode($income); ?>, <?= json_encode($expense); ?>],
-                lineTension: 0,
-                backgroundColor: ['#71c7ec', '#005073'],
-                borderColor: '#1e90ff',
-                borderWidth: 1
+                label: 'Relatório',
+                backgroundColor: ['#71c7ec', '#005073']
             }]
         },
         options: {
-            responsive: true
+            responsive: true,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
         }
     });
 </script>

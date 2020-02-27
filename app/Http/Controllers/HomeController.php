@@ -33,7 +33,7 @@ class HomeController extends Controller
 
         $customercount = Customer::where('user_id', auth()->user()->id)->get()->count();
 
-        // Gráfico
+        // Gráfico 1
         $months = [
             '01' => 'Jan',
             '02' => 'Fev',
@@ -63,14 +63,16 @@ class HomeController extends Controller
         $supplierorder_values = array_values($supplierorder_values);
         $customerorder_values = array_values($customerorder_values);
 
-        $income = Report::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('income');
-
-        $expense = Report::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('expense');
-
+        // Gráfico 2
         $all_orders = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('arrived');
 
         $arrived_orders = SupplierOrder::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->where('arrived', 1)->sum('arrived');
 
-        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'supplierorder_values', 'customerorder_values', 'income', 'expense', 'all_orders', 'arrived_orders'));
+        // Gráfico 3
+        $income = Report::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('income');
+
+        $expense = Report::where('user_id', auth()->user()->id)->whereYear('created_at', date('Y'))->sum('expense');
+
+        return view('main.home', compact('user', 'inventories', 'suppliercount', 'productcount', 'inventorycount', 'customercount', 'months_values', 'supplierorder_values', 'customerorder_values', 'all_orders', 'arrived_orders', 'income', 'expense'));
     }
 }

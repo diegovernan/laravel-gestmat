@@ -150,11 +150,11 @@
     var ctx2 = document.getElementById('myChart2')
     // Gráfico 2
     var myChart2 = new Chart(ctx2, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
-            labels: ['Despesa', 'Receita'],
+            labels: ['Solicitado', 'Recebido'],
             datasets: [{
-                data: [<?= json_encode($income); ?>, <?= json_encode($expense); ?>],
+                data: [<?= json_encode($all_orders); ?>, <?= json_encode($arrived_orders); ?>],
                 lineTension: 0,
                 backgroundColor: ['#71c7ec', '#005073'],
                 borderColor: '#1e90ff',
@@ -169,11 +169,11 @@
     var ctx3 = document.getElementById('myChart3')
     // Gráfico 3
     var myChart3 = new Chart(ctx3, {
-        type: 'doughnut',
+        type: 'pie',
         data: {
-            labels: ['Solicitado', 'Recebido'],
+            labels: ['Despesa', 'Receita'],
             datasets: [{
-                data: [<?= json_encode($all_orders); ?>, <?= json_encode($arrived_orders); ?>],
+                data: [<?= json_encode($income); ?>, <?= json_encode($expense); ?>],
                 lineTension: 0,
                 backgroundColor: ['#71c7ec', '#005073'],
                 borderColor: '#1e90ff',

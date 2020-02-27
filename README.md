@@ -1,4 +1,10 @@
-# GestMat - Sistema de gestão material (Laravel 6.0) *em construção
+# GestMat - Sistema de gestão material (Laravel 6.0)
+
+![alt test](screenshots/1.png)
+
+![alt test](screenshots/2.png)
+
+![alt test](screenshots/3.png)
 
 ## Instalação
 

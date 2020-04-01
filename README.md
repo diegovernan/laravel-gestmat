@@ -6,7 +6,7 @@
 
 ![alt test](screenshots/3.png)
 
-## Instalação
+## Instalação (localhost)
 
 Clona o projeto
 ```bash

@@ -6,7 +6,7 @@
 
 ![alt test](screenshots/3.png)
 
-## Instalação (localhost)
+## Instalação em localhost
 
 Clona o projeto
 ```bash
@@ -37,6 +37,7 @@ Cria banco de dados vazio (MySQL)
 ```bash
 $ mysql -uroot -proot
 $ create database gestmat;
+$ quit;
 ```
 
 Configurar banco de dados no arquivo .env

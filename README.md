@@ -8,7 +8,12 @@
 
 ## Instalação em localhost
 
-Clona o projeto
+Clona o projeto via Https
+```bash
+$ git clone https://github.com/diegovernan/laravel_gestmat.git
+```
+
+Clona o projeto via SSH
 ```bash
 $ git clone git@github.com:diegovernan/laravel_gestmat.git
 ```
@@ -36,7 +41,7 @@ $ php artisan key:generate
 Cria banco de dados vazio (MySQL)
 ```bash
 $ mysql -uroot -proot
-$ create database gestmat;
+$ create database laravel_gestmat;
 $ quit;
 ```
 
@@ -45,7 +50,7 @@ Configurar banco de dados no arquivo .env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=gestmat
+DB_DATABASE=laravel_gestmat
 DB_USERNAME=root
 DB_PASSWORD=root
 ```

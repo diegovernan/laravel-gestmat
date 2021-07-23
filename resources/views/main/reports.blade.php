@@ -2,20 +2,18 @@
 
 @section('content')
 
+<h4 class="text-center pt-5">Relatório {{ date('Y') }}</h4>
+
 <div class="text-center py-3 d-print-none">
     <button type="button" class="btn btn-primary" onclick="window.print()">Imprimir</button>
 </div>
 
-<h4 class="text-center py-3">Relatório {{ date('Y') }}</h4>
-
-<div class="d-flex justify-content-center py-3">
-    <div class="card" style="width: 18rem;">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Despesa: R$ {{ number_format($income, 2, ',', '.') }}</li>
-            <li class="list-group-item">Receita: R$ {{ number_format($expense, 2, ',', '.') }}</li>
-            <li class="list-group-item">Resultado: R$ {{ number_format($difference, 2, ',', '.') }}</li>
-        </ul>
-    </div>
+<div class="py-3">
+    <ul class="list-unstyled d-flex justify-content-around">
+        <li class="d-inline">Despesa: <span class="text-danger">R$ {{ number_format($income, 2, ',', '.') }}</span></li>
+        <li class="d-inline">Receita: <span class="text-success">R$ {{ number_format($expense, 2, ',', '.') }}</span></li>
+        <li class="d-inline">Resultado: <span class="text-primary">R$ {{ number_format($difference, 2, ',', '.') }}</span></li>
+    </ul>
 </div>
 
 <div class="table-responsive py-3 d-print-block">

@@ -2,37 +2,35 @@
 
 @section('content')
 
-<div class="container py-5">
-    <h4 class="text-center">Cadastrar</h4>
+<h3 class="py-3">Cadastrar</h3>
 
-    @include('alerts.messages')
+@include('alerts.messages')
 
-    <form method="post" action="{{ route('customers.store') }}">
-        @csrf
-        <div class="form-group">
-            <label for="Input1">Nome</label>
-            <input type="text" class="form-control" id="Input1" name="name" value="{{ old('name') }}">
-        </div>
+<form method="post" action="{{ route('customers.store') }}">
+    @csrf
+    <div class="form-group">
+        <label for="Input1">Nome</label>
+        <input type="text" class="form-control" id="Input1" name="name" value="{{ old('name') }}">
+    </div>
 
-        <div class="form-group">
-            <label for="Input2">Telefone</label>
-            <input type="text" class="form-control phone" id="Input2" name="phone" value="{{ old('phone') }}">
-        </div>
+    <div class="form-group">
+        <label for="Input2">Telefone</label>
+        <input type="text" class="form-control phone" id="Input2" name="phone" value="{{ old('phone') }}">
+    </div>
 
-        <div class="form-group">
-            <label for="Input3">E-mail</label>
-            <input type="email" class="form-control" id="Input3" name="email" value="{{ old('email') }}">
-        </div>
+    <div class="form-group">
+        <label for="Input3">E-mail</label>
+        <input type="email" class="form-control" id="Input3" name="email" value="{{ old('email') }}">
+    </div>
 
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary">Salvar</button>
-        </div>
-    </form>
-</div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+</form>
 
 <hr>
 
-<h4 class="text-center py-5">Clientes</h4>
+<h3 class="py-3">Clientes</h3>
 
 <div class="table-responsive pb-5">
     <table class="table table-striped table-sm">

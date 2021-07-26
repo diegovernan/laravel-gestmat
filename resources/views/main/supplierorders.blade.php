@@ -40,7 +40,7 @@
 
 <hr>
 
-<h3 class="py-3">Solicitações</h4>
+<h3 class="py-3">Solicitações</h3>
 
     <div class="table-responsive pb-5">
         <table class="table table-striped table-sm">

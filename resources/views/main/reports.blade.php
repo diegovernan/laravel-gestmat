@@ -2,10 +2,10 @@
 
 @section('content')
 
-<h4 class="text-center pt-5">Relatório {{ date('Y') }}</h4>
+<div class="d-flex justify-content-between py-4">
+    <h3>Relatório {{ date('Y') }}</h3>
 
-<div class="text-center py-3 d-print-none">
-    <button type="button" class="btn btn-primary" onclick="window.print()">Imprimir</button>
+    <button type="button" class="btn btn-primary d-print-none" onclick="window.print()">Imprimir</button>
 </div>
 
 <div class="py-3">

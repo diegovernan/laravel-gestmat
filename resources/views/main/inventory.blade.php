@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h4 class="text-center py-5">Estoque</h4>
+<h3 class="py-3">Estoque</h3>
 
 <div class="table-responsive pb-5">
     <table class="table table-striped table-sm">

@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 top-home d-print-none">
-    <h6>Olá, {{ $user->name }}!</h6>
+    <h3>Olá, {{ $user->name }}!</h3>
 
-    <button type="button" class="btn btn-sm btn-outline-primary" onclick="window.print()">Exportar</button>
+    <button type="button" class="btn btn-outline-primary" onclick="window.print()">Exportar</button>
 </div>
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-3 d-print-none">
@@ -59,10 +59,6 @@
         <canvas class="w-100" id="myChart3"></canvas>
     </div>
 </div>
-
-<!-- <div class="py-3 d-print-block">
-    <canvas class="my-4 w-100" id="myChart" height="380em"></canvas>
-</div> -->
 
 <div class="table-responsive py-3 d-print-block">
     <table class="table table-striped table-sm">

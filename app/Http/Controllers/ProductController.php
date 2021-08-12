@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\InventoryRequest;
-use App\Product;
 use App\Http\Requests\ProductRequest;
+use App\Product;
 use App\Inventory;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -27,15 +25,13 @@ class ProductController extends Controller
         $product = new Product();
         $product->user_id = auth()->user()->id;
         $product->name = $product_request->name;
-        $product->cost_price = str_replace(",", ".", $product_request->cost_price);
-        $product->sale_price = str_replace(",", ".", $product_request->sale_price);
-
+        $product->cost_price = str_replace(',', '.', $product_request->cost_price);
+        $product->sale_price = str_replace(',', '.', $product_request->sale_price);
         $product->save();
 
         $inventory = new Inventory();
         $inventory->user_id = auth()->user()->id;
         $inventory->product_id = $product->id;
-
         $inventory->save();
 
         return redirect()->back()->with('success', 'Produto cadastrado e adicionado ao estoque com sucesso!');
@@ -50,9 +46,8 @@ class ProductController extends Controller
     {
         $product->user_id = auth()->user()->id;
         $product->name = $request->name;
-        $product->cost_price = str_replace(",", ".", $request->cost_price);
-        $product->sale_price = str_replace(",", ".", $request->sale_price);
-
+        $product->cost_price = str_replace(',', '.', $request->cost_price);
+        $product->sale_price = str_replace(',', '.', $request->sale_price);
         $product->save();
 
         return redirect()->back()->with('success', 'Produto atualizado com sucesso!');

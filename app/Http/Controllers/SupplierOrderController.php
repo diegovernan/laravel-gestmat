@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\SupplierOrder;
 use App\Http\Requests\SupplierOrderRequest;
+use App\SupplierOrder;
 use App\Inventory;
 use App\Supplier;
-use App\Product;
-use App\Mail\SupplierOrderMail;
 use App\Report;
+use App\Mail\SupplierOrderMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -38,7 +37,6 @@ class SupplierOrderController extends Controller
         $supplierorder->supplier_id = $request->supplier_id;
         $supplierorder->quantity = $request->quantity;
         $supplierorder->price = $request->quantity * $supplierorder->product->cost_price;
-
         $supplierorder->save();
 
         Mail::to($supplierorder->supplier->email)->send(new SupplierOrderMail($supplierorder));
@@ -49,7 +47,6 @@ class SupplierOrderController extends Controller
     public function update(Request $request, SupplierOrder $supplierorder)
     {
         $supplierorder->arrived = 1;
-
         $supplierorder->save();
 
         Inventory::where('user_id', auth()->user()->id)->where('product_id', $supplierorder->product_id)->increment('available_quantity', $supplierorder->quantity);

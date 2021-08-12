@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\CustomerOrder;
 use App\Http\Requests\CustomerOrderRequest;
+use App\CustomerOrder;
 use App\Inventory;
 use App\Customer;
 use App\Product;
 use App\Report;
-use Illuminate\Http\Request;
 
 class CustomerOrderController extends Controller
 {

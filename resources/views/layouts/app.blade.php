@@ -49,7 +49,7 @@
             @guest
             <div class="d-flex mx-2">
                 <li class="nav-item mx-2">
-                    <a class="nav-link" href="{{ route('login') }}">Entrar</a>
+                    <a class="nav-link" href="{{ route('login') }}">Acessar</a>
                 </li>
                 @if (Route::has('register'))
                 <li class="nav-item mx-2">

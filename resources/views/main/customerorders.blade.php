@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h3 class="py-3">Vender</h3>
+<h3 class="text-center py-3">Vender</h3>
 
 @include('alerts.messages')
 
@@ -40,7 +40,7 @@
 
 <hr>
 
-<h3 class="py-3">Vendas</h3>
+<h3 class="text-center py-3">Vendas</h3>
 
 <div class="table-responsive pb-5">
     <table class="table table-striped table-sm">

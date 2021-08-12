@@ -13,6 +13,13 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link {{ Route::is('reports') ? 'active' : '' }}" href="{{ route('reports') }}">
+                    <span data-feather="bar-chart-2"></span>
+                    Relatório
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link {{ Route::is('supplierorders') ? 'active' : '' }}" href="{{ route('supplierorders') }}">
                     <span data-feather="send"></span>
                     Pedidos
@@ -30,13 +37,6 @@
                 <a class="nav-link {{ Route::is('inventory') ? 'active' : '' }}" href="{{ route('inventory') }}">
                     <span data-feather="archive"></span>
                     Estoque
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link {{ Route::is('reports') ? 'active' : '' }}" href="{{ route('reports') }}">
-                    <span data-feather="bar-chart-2"></span>
-                    Relatórios
                 </a>
             </li>
         </ul>

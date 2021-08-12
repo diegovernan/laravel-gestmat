@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h3 class="py-3">Atualizar</h3>
+<h3 class="text-center py-3">Atualizar</h3>
 
 @include('alerts.messages')
 
@@ -21,7 +21,7 @@
 
 <hr>
 
-<h3 class="py-3">Informações do item</h3>
+<h3 class="text-center py-3">Informações do item</h3>
 
 <div class="pb-5">
     <p>ID: {{ $inventory->id }}</p>

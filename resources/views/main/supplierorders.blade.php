@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h3 class="py-3">Solicitar</h3>
+<h3 class="text-center py-3">Solicitar</h3>
 
 @include('alerts.messages')
 
@@ -40,56 +40,56 @@
 
 <hr>
 
-<h3 class="py-3">Solicitações</h3>
+<h3 class="text-center py-3">Solicitações</h3>
 
-    <div class="table-responsive pb-5">
-        <table class="table table-striped table-sm">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Fornecedor</th>
-                    <th>Produto</th>
-                    <th>Quantidade</th>
-                    <th>Entrega</th>
-                    <th>Custo</th>
-                    <th>Recebido</th>
-                </tr>
-            </thead>
+<div class="table-responsive pb-5">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Fornecedor</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Entrega</th>
+                <th>Custo</th>
+                <th>Recebido</th>
+            </tr>
+        </thead>
 
-            <tbody>
-                @forelse ($supplierorders as $supplierorder)
-                <tr>
-                    <td>{{ $supplierorder->id }}</td>
-                    <td>{{ $supplierorder->supplier->name }}</td>
-                    <td>{{ $supplierorder->product->name }}</td>
-                    <td>{{ $supplierorder->quantity }}</td>
-                    <td>{{ $supplierorder->updated_at->format('d/m/Y') }}</td>
-                    <td>R$ {{ number_format($supplierorder->price, 2, ',', '.') }}</td>
-                    <td>
-                        @if ( $supplierorder->arrived == 0 )
-                        <form method="post" action="{{ route('supplierorder.update', $supplierorder->id) }}">
-                            @csrf
-                            @method('PATCH')
-                            <button type="submit" class="btn btn-outline-danger btn-sm"><span data-feather="x-square"></span></button>
-                        </form>
-                        @else
-                        <button class="btn btn-outline-success btn-sm"><span data-feather="check-circle"></span></button>
-                        @endif
-                    </td>
-                </tr>
-                @empty
-                <tr>
-                    <td colspan="7" class="text-center">Nenhuma solicitação encontrada...</td>
-                </tr>
-                @endforelse
-            </tbody>
-        </table>
+        <tbody>
+            @forelse ($supplierorders as $supplierorder)
+            <tr>
+                <td>{{ $supplierorder->id }}</td>
+                <td>{{ $supplierorder->supplier->name }}</td>
+                <td>{{ $supplierorder->product->name }}</td>
+                <td>{{ $supplierorder->quantity }}</td>
+                <td>{{ $supplierorder->updated_at->format('d/m/Y') }}</td>
+                <td>R$ {{ number_format($supplierorder->price, 2, ',', '.') }}</td>
+                <td>
+                    @if ( $supplierorder->arrived == 0 )
+                    <form method="post" action="{{ route('supplierorder.update', $supplierorder->id) }}">
+                        @csrf
+                        @method('PATCH')
+                        <button type="submit" class="btn btn-outline-danger btn-sm"><span data-feather="x-square"></span></button>
+                    </form>
+                    @else
+                    <button class="btn btn-outline-success btn-sm"><span data-feather="check-circle"></span></button>
+                    @endif
+                </td>
+            </tr>
+            @empty
+            <tr>
+                <td colspan="7" class="text-center">Nenhuma solicitação encontrada...</td>
+            </tr>
+            @endforelse
+        </tbody>
+    </table>
 
-        <div class="d-flex">
-            <div class="mx-auto py-2">
-                {{ $supplierorders->links() }}
-            </div>
+    <div class="d-flex">
+        <div class="mx-auto py-2">
+            {{ $supplierorders->links() }}
         </div>
     </div>
+</div>
 
-    @endsection
+@endsection

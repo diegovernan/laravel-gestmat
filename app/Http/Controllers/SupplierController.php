@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Supplier;
 use App\Http\Requests\SupplierRequest;
-use Illuminate\Http\Request;
 
 class SupplierController extends Controller
 {
@@ -27,7 +26,6 @@ class SupplierController extends Controller
         $supplier->name = $request->name;
         $supplier->phone = $request->phone;
         $supplier->email = $request->email;
-
         $supplier->save();
 
         return redirect()->back()->with('success', 'Fornecedor cadastrado com sucesso!');
@@ -44,7 +42,6 @@ class SupplierController extends Controller
         $supplier->name = $request->name;
         $supplier->phone = $request->phone;
         $supplier->email = $request->email;
-
         $supplier->save();
 
         return redirect()->back()->with('success', 'Fornecedor atualizado com sucesso!');

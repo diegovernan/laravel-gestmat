@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\InventoryRequest;
 use App\Inventory;
 use App\Product;
-use Illuminate\Http\Request;
 
 class InventoryController extends Controller
 {

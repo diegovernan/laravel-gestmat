@@ -10,7 +10,6 @@ use App\Customer;
 use App\Report;
 use App\CustomerOrder;
 use App\SupplierOrder;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {

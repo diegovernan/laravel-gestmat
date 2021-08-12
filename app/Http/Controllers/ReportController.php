@@ -4,9 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Inventory;
 use App\Report;
-use App\SupplierOrder;
-use App\CustomerOrder;
-use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {

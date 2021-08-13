@@ -19,7 +19,7 @@ class CreateCustomerOrdersTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('customer_id');
             $table->integer('quantity');
-            $table->string('price');
+            $table->float('price');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

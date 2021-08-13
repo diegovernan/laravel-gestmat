@@ -39,7 +39,9 @@
     <p>Telefone: {{ $customer->phone }}</p>
     <p>E-mail: {{ $customer->email }}</p>
 
-    <a href="{{ route('customers') }}" type="button" class="btn btn-dark">Voltar</a>
+    <div class="text-center">
+        <a href="{{ route('customers') }}" type="button" class="btn btn-dark">Voltar</a>
+    </div>
 </div>
 
 @endsection

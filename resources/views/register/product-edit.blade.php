@@ -39,7 +39,9 @@
     <p>Preço de custo: R$ {{ number_format($product->cost_price, 2, ',', '.') }}</p>
     <p>Preço de venda: R$ {{ number_format($product->sale_price, 2, ',', '.') }}</p>
 
-    <a href="{{ route('products') }}" type="button" class="btn btn-dark">Voltar</a>
+    <div class="text-center">
+        <a href="{{ route('products') }}" type="button" class="btn btn-dark">Voltar</a>
+    </div>
 </div>
 
 @endsection

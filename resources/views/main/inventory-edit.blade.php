@@ -30,7 +30,9 @@
     <p>Quantidade disponível: {{ $inventory->available_quantity }}</p>
     <p>Quantidade vendida: {{ $inventory->sold_quantity }}</p>
 
-    <a href="{{ route('inventory') }}" type="button" class="btn btn-dark">Voltar</a>
+    <div class="text-center">
+        <a href="{{ route('inventory') }}" type="button" class="btn btn-dark">Voltar</a>
+    </div>
 </div>
 
 @endsection

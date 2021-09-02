@@ -14,7 +14,8 @@ class ProfileRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|min:2|max:20'
+            'name' => 'required|string|min:2|max:20',
+            'email' => 'required|email|unique:users,email,' . $this->user->id,
         ];
     }
 

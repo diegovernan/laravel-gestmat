@@ -23,6 +23,7 @@ class ProfileController extends Controller
     public function update(ProfileRequest $request, User $user)
     {
         $user->name = $request->name;
+        $user->email = $request->email;
         $user->save();
 
         return redirect()->back()->with('success', 'Perfil atualizado!');

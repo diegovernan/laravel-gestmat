@@ -14,6 +14,11 @@
         <input type="text" class="form-control" id="Input1" name="name" value="{{ old('name') ?? $user->name }}">
     </div>
 
+    <div class="form-group">
+        <label for="Input2">E-mail</label>
+        <input type="text" class="form-control" id="Input2" name="email" value="{{ old('email') ?? $user->email }}">
+    </div>
+
     <div class="text-center pb-5">
         <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
